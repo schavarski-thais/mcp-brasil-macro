@@ -1,0 +1,136 @@
+tema: trabalho
+titulo: Mercado de trabalho — desocupação, ocupação, rendimento e emprego formal
+indicadores:
+  - id: taxa_desocupacao_bcb
+    nome: Taxa de desocupação — PNAD Contínua, trimestre móvel (via BCB)
+    subtema: desocupacao
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 24369
+    produtor: IBGE
+    aliases: [desemprego, taxa de desemprego, desocupacao]
+    notas: Cada mês representa o trimestre móvel encerrado nele.
+
+  - id: emprego_formal_estoque
+    nome: Estoque de empregos formais — total (Novo CAGED)
+    subtema: emprego formal
+    unidade: unidades
+    periodicidade: mensal
+    sgs: 28763
+    produtor: Ministério do Trabalho e Emprego
+    aliases: [caged, emprego com carteira, estoque de empregos]
+    notas: Use transformacao=diferenca para aproximar o saldo mensal de vagas.
+    destaque: true
+
+  # --- séries direto do IBGE (SIDRA): PNAD Contínua mensal (trimestre móvel)
+  - id: taxa_desocupacao
+    nome: Taxa de desocupação — PNAD Contínua, trimestre móvel
+    subtema: desocupacao
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 6381, variavel: 4099}
+    aliases: [desemprego, taxa de desemprego, desocupacao, pnad]
+    notas: "Cada mês representa o trimestre móvel encerrado nele (2026-09 = jul-ago-set). Sem ajuste sazonal."
+    destaque: true
+    painel_geral: true
+
+  - id: populacao_ocupada
+    nome: População ocupada — PNAD Contínua, trimestre móvel
+    subtema: ocupacao
+    unidade: mil pessoas
+    periodicidade: mensal
+    sidra: {tabela: 6318, variavel: 1641, classificacoes: {629: 32387}}
+    aliases: [ocupados, pessoas ocupadas, emprego total]
+    notas: Cada mês representa o trimestre móvel encerrado nele.
+    destaque: true
+
+  - id: populacao_desocupada
+    nome: População desocupada — PNAD Contínua, trimestre móvel
+    subtema: desocupacao
+    unidade: mil pessoas
+    periodicidade: mensal
+    sidra: {tabela: 6318, variavel: 1641, classificacoes: {629: 32446}}
+    aliases: [desempregados, desocupados]
+    notas: Cada mês representa o trimestre móvel encerrado nele.
+
+  - id: forca_de_trabalho
+    nome: Força de trabalho — PNAD Contínua, trimestre móvel
+    subtema: ocupacao
+    unidade: mil pessoas
+    periodicidade: mensal
+    sidra: {tabela: 6318, variavel: 1641, classificacoes: {629: 32386}}
+    aliases: [populacao economicamente ativa, pea]
+    notas: Cada mês representa o trimestre móvel encerrado nele.
+
+  - id: fora_da_forca_de_trabalho
+    nome: Pessoas fora da força de trabalho — PNAD Contínua, trimestre móvel
+    subtema: ocupacao
+    unidade: mil pessoas
+    periodicidade: mensal
+    sidra: {tabela: 6318, variavel: 1641, classificacoes: {629: 32447}}
+    aliases: [inativos, fora da forca]
+    notas: Cada mês representa o trimestre móvel encerrado nele.
+
+  - id: rendimento_medio_real
+    nome: Rendimento médio real habitual de todos os trabalhos — PNAD Contínua, trimestre móvel
+    subtema: rendimento
+    unidade: R$
+    periodicidade: mensal
+    sidra: {tabela: 6390, variavel: 5933}
+    aliases: [salario medio real, renda media, rendimento do trabalho]
+    notas: Valores a preços do último trimestre divulgado; a série inteira é recalculada a cada divulgação.
+    destaque: true
+
+  - id: rendimento_medio_nominal
+    nome: Rendimento médio nominal habitual de todos os trabalhos — PNAD Contínua, trimestre móvel
+    subtema: rendimento
+    unidade: R$
+    periodicidade: mensal
+    sidra: {tabela: 6390, variavel: 5929}
+    aliases: [salario medio nominal]
+    notas: Cada mês representa o trimestre móvel encerrado nele.
+
+  - id: massa_rendimento_real
+    nome: Massa de rendimento real habitual de todos os trabalhos — PNAD Contínua, trimestre móvel
+    subtema: rendimento
+    unidade: R$ milhões
+    periodicidade: mensal
+    sidra: {tabela: 6392, variavel: 6293}
+    aliases: [massa salarial, massa de rendimentos]
+    notas: Valores a preços do último trimestre divulgado; a série inteira é recalculada a cada divulgação.
+    destaque: true
+
+  # --- PNAD Contínua trimestral
+  - id: taxa_subutilizacao
+    nome: Taxa composta de subutilização da força de trabalho — PNAD Contínua trimestral
+    subtema: desocupacao
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 4099, variavel: 4118}
+    aliases: [subutilizacao, desemprego ampliado, subocupacao e desalento]
+    destaque: true
+
+  - id: taxa_participacao
+    nome: Taxa de participação na força de trabalho — PNAD Contínua trimestral
+    subtema: ocupacao
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 4093, variavel: 4096, classificacoes: {2: 6794}}
+    aliases: [participacao, taxa de atividade]
+
+  - id: nivel_ocupacao
+    nome: Nível da ocupação (ocupados sobre população em idade de trabalhar) — PNAD Contínua trimestral
+    subtema: ocupacao
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 4093, variavel: 4097, classificacoes: {2: 6794}}
+    aliases: [nivel de ocupacao, taxa de emprego]
+
+  - id: taxa_informalidade
+    nome: Taxa de informalidade das pessoas ocupadas — PNAD Contínua trimestral
+    subtema: ocupacao
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 4093, variavel: 12466, classificacoes: {2: 6794}}
+    aliases: [informalidade, trabalho informal]
+    destaque: true

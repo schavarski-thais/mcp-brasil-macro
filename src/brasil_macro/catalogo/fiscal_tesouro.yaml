@@ -1,0 +1,346 @@
+tema: fiscal
+titulo: Política fiscal — resultado primário, nominal e dívida pública
+indicadores:
+  # ---------------------------------------------------------------- RTN
+  # Resultado do Tesouro Nacional: governo central (Tesouro, Previdência e
+  # Banco Central), critério "acima da linha". Cada indicador aponta para uma
+  # linha da série histórica: `linha` é a numeração na planilha e `confere` é
+  # um trecho do rótulo, usado para detectar renumeração.
+  - id: rtn_resultado_primario
+    nome: Resultado primário do governo central — fluxo mensal, acima da linha (RTN)
+    subtema: governo central
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "5", confere: resultado primario governo central}
+    aliases: [rtn, resultado do tesouro, primario governo central, resultado tesouro nacional, acima da linha]
+    notas: "Convenção RTN: valor positivo = superávit; negativo = déficit (oposto das séries NFSP do Banco Central, em que positivo = déficit). Use transformacao=soma_12m para o acumulado em 12 meses."
+    destaque: true
+
+  - id: rtn_receita_total
+    nome: Receita total do governo central — fluxo mensal (RTN)
+    subtema: governo central
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "1", confere: receita total}
+    aliases: [receita governo central, arrecadacao governo central]
+    notas: "Valores correntes, conceito de caixa. Inclui a arrecadação do RGPS; antes das transferências a estados e municípios."
+
+  - id: rtn_transferencias_reparticao
+    nome: Transferências por repartição de receita a estados e municípios — fluxo mensal (RTN)
+    subtema: governo central
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "2", confere: transf por reparticao de receita}
+    aliases: [fpm fpe, transferencias constitucionais, reparticao de receita]
+    notas: "Valores correntes. Subtraídas da receita total para chegar à receita líquida."
+
+  - id: rtn_receita_liquida
+    nome: Receita líquida do governo central — fluxo mensal (RTN)
+    subtema: governo central
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "3", confere: receita liquida}
+    aliases: [receita liquida governo central]
+    notas: "Valores correntes. Receita total menos transferências por repartição de receita."
+
+  - id: rtn_despesa_total
+    nome: Despesa total do governo central — fluxo mensal (RTN)
+    subtema: governo central
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "4", confere: despesa total}
+    aliases: [despesa governo central, despesa primaria, gasto federal]
+    notas: "Valores correntes, despesa primária pelo conceito de pagamento efetivo. Não inclui juros da dívida."
+
+  - id: rtn_receita_administrada_rfb
+    nome: Receita administrada pela Receita Federal — fluxo mensal (RTN)
+    subtema: governo central — receitas
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "1.1", confere: receita administrada pela rfb}
+    aliases: [receita administrada, arrecadacao rfb, impostos federais]
+    notas: "Valores correntes. Impostos e contribuições federais, exceto a arrecadação do RGPS."
+
+  - id: rtn_arrecadacao_rgps
+    nome: Arrecadação líquida para o RGPS — fluxo mensal (RTN)
+    subtema: governo central — receitas
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "1.3", confere: arrecadacao liquida para o rgps}
+    aliases: [receita previdenciaria, arrecadacao previdencia, receita rgps]
+    notas: "Valores correntes. Contribuições previdenciárias ao regime geral (INSS)."
+
+  - id: rtn_receitas_nao_administradas
+    nome: Receitas não administradas pela Receita Federal — fluxo mensal (RTN)
+    subtema: governo central — receitas
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "1.4", confere: receitas nao administradas pela rfb}
+    aliases: [receitas nao administradas, dividendos concessoes royalties]
+    notas: "Valores correntes. Concessões, dividendos, exploração de recursos naturais (royalties) e outras."
+
+  - id: rtn_beneficios_previdenciarios
+    nome: Benefícios previdenciários do RGPS — despesa mensal (RTN)
+    subtema: governo central — despesas
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "4.1", confere: beneficios previdenciarios}
+    aliases: [despesa previdencia, despesa rgps, inss beneficios, aposentadorias]
+    notas: "Valores correntes. Despesa: valor maior significa mais gasto."
+
+  - id: rtn_pessoal_encargos
+    nome: Pessoal e encargos sociais do governo central — despesa mensal (RTN)
+    subtema: governo central — despesas
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "4.2", confere: pessoal e encargos sociais}
+    aliases: [despesa pessoal, folha federal, servidores]
+    notas: "Valores correntes. Despesa: valor maior significa mais gasto."
+
+  - id: rtn_outras_obrigatorias
+    nome: Outras despesas obrigatórias do governo central — despesa mensal (RTN)
+    subtema: governo central — despesas
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "4.3", confere: outras despesas obrigatorias}
+    aliases: [despesas obrigatorias, abono seguro desemprego bpc]
+    notas: "Valores correntes. Abono e seguro-desemprego, BPC/LOAS, Fundeb, subsídios, sentenças judiciais e outras."
+
+  - id: rtn_despesas_programacao_financeira
+    nome: Despesas do Poder Executivo sujeitas à programação financeira — despesa mensal (RTN)
+    subtema: governo central — despesas
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "4.4", confere: sujeitas a programacao financeira}
+    aliases: [programacao financeira]
+    notas: "Valores correntes. Soma das obrigatórias com controle de fluxo (Bolsa Família, saúde, educação) e das discricionárias."
+
+  - id: rtn_obrigatorias_controle_fluxo
+    nome: Despesas obrigatórias com controle de fluxo — despesa mensal (RTN)
+    subtema: governo central — despesas
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "4.4.1", confere: obrigatorias com controle de fluxo}
+    aliases: [controle de fluxo, bolsa familia]
+    notas: "Valores correntes. Série zerada na planilha antes da abertura dessa classificação."
+
+  - id: rtn_discricionarias
+    nome: Despesas discricionárias do Poder Executivo — despesa mensal (RTN)
+    subtema: governo central — despesas
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "4.4.2", confere: despesas discricionarias}
+    aliases: [discricionarias, despesas discricionarias, custeio e investimento]
+    notas: "Valores correntes. Série zerada na planilha antes da abertura dessa classificação."
+
+  - id: rtn_investimento
+    nome: Investimento do governo central — despesa mensal (RTN)
+    subtema: governo central — despesas
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.3", linha: "1", confere: investimento total}
+    aliases: [investimento publico federal, investimento uniao]
+    notas: "Valores correntes, desde 2008. Investimentos (GND 4) mais inversões financeiras e demais itens classificados como investimento pelo Tesouro."
+
+  - id: rtn_resultado_rgps
+    nome: Resultado da Previdência Social (RGPS) — fluxo mensal (calculado a partir do RTN)
+    subtema: governo central — por esfera
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn:
+      tabela: "1.1"
+      linha: "1.3"
+      confere: arrecadacao liquida para o rgps
+      menos: [{linha: "4.1", confere: beneficios previdenciarios}]
+    aliases: [deficit previdencia, resultado previdencia, deficit inss, rgps]
+    notas: "Convenção RTN: positivo = superávit; negativo = déficit. Calculado como arrecadação líquida para o RGPS menos benefícios previdenciários, a definição usada pelo Tesouro; a série histórica não traz essa linha pronta."
+
+  - id: rtn_resultado_tesouro_bc
+    nome: Resultado primário do Tesouro Nacional e Banco Central, exceto RGPS — fluxo mensal (calculado a partir do RTN)
+    subtema: governo central — por esfera
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn:
+      tabela: "1.1"
+      linha: "5"
+      confere: resultado primario governo central
+      menos: [{linha: "1.3", confere: arrecadacao liquida para o rgps}]
+      mais: [{linha: "4.1", confere: beneficios previdenciarios}]
+    aliases: [resultado tesouro nacional e banco central, primario exceto previdencia]
+    notas: "Convenção RTN: positivo = superávit; negativo = déficit. Calculado como resultado primário do governo central menos o resultado do RGPS. A série histórica não separa o Banco Central do Tesouro Nacional."
+
+  - id: rtn_juros_nominais
+    nome: Juros nominais do governo central — fluxo mensal (RTN, fonte Banco Central)
+    subtema: governo central
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "9", confere: juros nominais}
+    aliases: [juros governo central, despesa com juros]
+    notas: "Sinal da planilha do RTN: valor negativo = despesa líquida com juros. Apurado pelo Banco Central (abaixo da linha) e publicado com um mês de atraso em relação ao resultado primário."
+
+  - id: rtn_resultado_nominal
+    nome: Resultado nominal do governo central — fluxo mensal (RTN, fonte Banco Central)
+    subtema: governo central
+    unidade: R$ milhões
+    periodicidade: mensal
+    rtn: {tabela: "1.1", linha: "10", confere: resultado nominal do governo central}
+    aliases: [nominal governo central, deficit nominal governo central]
+    notas: "Convenção RTN: positivo = superávit; negativo = déficit (oposto das séries NFSP). Primário abaixo da linha mais juros nominais, apurados pelo Banco Central; publicado com um mês de atraso."
+
+  - id: rtn_resultado_primario_real_12m
+    nome: Resultado primário do governo central — acumulado em 12 meses, a preços constantes (RTN)
+    subtema: governo central — valores reais
+    unidade: R$ milhões a preços constantes (IPCA)
+    periodicidade: mensal
+    rtn: {tabela: "1.2-B", linha: "5", confere: resultado primario governo central}
+    aliases: [primario 12 meses real, resultado primario real]
+    notas: "Convenção RTN: positivo = superávit; negativo = déficit. Valores atualizados pelo IPCA para o mês mais recente da planilha; toda a série é reprecificada a cada divulgação."
+
+  - id: rtn_receita_liquida_real_12m
+    nome: Receita líquida do governo central — acumulada em 12 meses, a preços constantes (RTN)
+    subtema: governo central — valores reais
+    unidade: R$ milhões a preços constantes (IPCA)
+    periodicidade: mensal
+    rtn: {tabela: "1.2-B", linha: "3", confere: receita liquida}
+    aliases: [receita liquida real]
+    notas: "Valores atualizados pelo IPCA para o mês mais recente da planilha; toda a série é reprecificada a cada divulgação. Use transformacao=variacao_anual para o crescimento real."
+
+  - id: rtn_despesa_total_real_12m
+    nome: Despesa total do governo central — acumulada em 12 meses, a preços constantes (RTN)
+    subtema: governo central — valores reais
+    unidade: R$ milhões a preços constantes (IPCA)
+    periodicidade: mensal
+    rtn: {tabela: "1.2-B", linha: "4", confere: despesa total}
+    aliases: [despesa real, crescimento real da despesa]
+    notas: "Valores atualizados pelo IPCA para o mês mais recente da planilha; toda a série é reprecificada a cada divulgação. Use transformacao=variacao_anual para o crescimento real."
+
+  - id: rtn_resultado_primario_pib_anual
+    nome: Resultado primário do governo central — anual, % do PIB (RTN)
+    subtema: governo central — % do PIB
+    unidade: "% do PIB"
+    periodicidade: anual
+    rtn: {tabela: "2.1-A", linha: "5", confere: resultado primario governo central}
+    aliases: [primario governo central pib, resultado primario anual]
+    notas: "Convenção RTN: positivo = superávit; negativo = déficit (oposto das séries NFSP). Só anos fechados."
+
+  - id: rtn_receita_liquida_pib_anual
+    nome: Receita líquida do governo central — anual, % do PIB (RTN)
+    subtema: governo central — % do PIB
+    unidade: "% do PIB"
+    periodicidade: anual
+    rtn: {tabela: "2.1-A", linha: "3", confere: receita liquida}
+    aliases: [receita liquida pib]
+    notas: "Só anos fechados."
+
+  - id: rtn_despesa_total_pib_anual
+    nome: Despesa total do governo central — anual, % do PIB (RTN)
+    subtema: governo central — % do PIB
+    unidade: "% do PIB"
+    periodicidade: anual
+    rtn: {tabela: "2.1-A", linha: "4", confere: despesa total}
+    aliases: [despesa primaria pib, gasto federal pib]
+    notas: "Despesa primária (sem juros). Só anos fechados."
+
+  # ---------------------------------------------------------------- DPF
+  # Dívida Pública Federal (Tesouro Nacional, Relatório Mensal da Dívida).
+  # Estoque no fim do mês, em R$ bilhões, pelo anexo 2.1; fatores de variação
+  # no anexo 2.9, em R$ milhões. `linha` é o rótulo na planilha.
+  - id: dpf_estoque
+    nome: Dívida Pública Federal (DPF) — estoque no fim do mês
+    subtema: divida federal
+    unidade: R$ bilhões
+    periodicidade: mensal
+    dpf: {anexo: "2.1", linha: DPF EM PODER DO PÚBLICO}
+    aliases: [dpf, divida publica federal, estoque da dpf, divida federal, divida mobiliaria federal]
+    notas: "É a DPMFi mais a DPFe. O Tesouro chama de 'em poder do público' e não inclui a carteira de títulos do Banco Central (ver dpf_dpmfi_carteira_bcb). Valores pela curva de rentabilidade. Não confundir com a DBGG do Banco Central (setor público consolidado) nem com a DLSP."
+    destaque: true
+
+  - id: dpf_dpmfi
+    nome: Dívida Pública Mobiliária Federal interna (DPMFi) — estoque no fim do mês
+    subtema: divida federal
+    unidade: R$ bilhões
+    periodicidade: mensal
+    dpf: {anexo: "2.1", linha: DPMFi}
+    aliases: [dpmfi, divida mobiliaria interna, divida interna federal]
+    notas: "Títulos emitidos no mercado interno, em reais. Parte da DPF, sem a carteira do Banco Central."
+
+  - id: dpf_dpfe
+    nome: Dívida Pública Federal externa (DPFe) — estoque no fim do mês
+    subtema: divida federal
+    unidade: R$ bilhões
+    periodicidade: mensal
+    dpf: {anexo: "2.1", linha: DPFe}
+    aliases: [dpfe, divida externa federal, divida externa tesouro]
+    notas: "Mobiliária (Global USD, euro, Global BRL) e contratual (organismos multilaterais, credores privados e agências), convertida em reais pela cotação do último dia do mês."
+
+  - id: dpf_lft
+    nome: DPF — estoque de LFT (Tesouro Selic) no fim do mês
+    subtema: divida federal
+    unidade: R$ bilhões
+    periodicidade: mensal
+    dpf: {anexo: "2.1", linha: "DPMFi / LFT"}
+    aliases: [lft, tesouro selic estoque, titulos pos fixados]
+    notas: "Parte da DPMFi indexada à Selic. Desde janeiro/2006."
+
+  - id: dpf_ltn
+    nome: DPF — estoque de LTN (Tesouro Prefixado) no fim do mês
+    subtema: divida federal
+    unidade: R$ bilhões
+    periodicidade: mensal
+    dpf: {anexo: "2.1", linha: "DPMFi / LTN"}
+    aliases: [ltn, tesouro prefixado estoque, titulos prefixados]
+    notas: "Parte da DPMFi com taxa prefixada, sem cupom. Desde janeiro/2006."
+
+  - id: dpf_ntnb
+    nome: DPF — estoque de NTN-B (Tesouro IPCA+) no fim do mês
+    subtema: divida federal
+    unidade: R$ bilhões
+    periodicidade: mensal
+    dpf: {anexo: "2.1", linha: "DPMFi / NTN-B"}
+    aliases: [ntn-b, tesouro ipca estoque, titulos indexados ao ipca]
+    notas: "Parte da DPMFi indexada ao IPCA, com cupom semestral (não inclui a NTN-B1, o Tesouro IPCA+ sem cupom, que tem série própria na planilha). Desde janeiro/2006."
+
+  - id: dpf_ntnf
+    nome: DPF — estoque de NTN-F (Tesouro Prefixado com juros semestrais) no fim do mês
+    subtema: divida federal
+    unidade: R$ bilhões
+    periodicidade: mensal
+    dpf: {anexo: "2.1", linha: "DPMFi / NTN-F"}
+    aliases: [ntn-f, prefixado com juros semestrais estoque]
+    notas: "Parte da DPMFi com taxa prefixada e cupom semestral. Desde janeiro/2006."
+
+  - id: dpf_dpmfi_carteira_bcb
+    nome: DPMFi na carteira do Banco Central — estoque no fim do mês
+    subtema: divida federal
+    unidade: R$ bilhões
+    periodicidade: mensal
+    dpf: {anexo: "2.1", linha: DPMFi EM PODER DO BANCO CENTRAL}
+    aliases: [carteira do banco central, titulos no banco central, dpmfi bacen]
+    notas: "Títulos do Tesouro mantidos pelo Banco Central para operações de política monetária (compromissadas). Não entram em dpf_estoque (a soma DPMFi + DPFe fecha com o total sem esta linha)."
+
+  - id: dpf_variacao_nominal
+    nome: DPF — variação nominal do estoque no mês
+    subtema: divida federal
+    unidade: R$ milhões
+    periodicidade: mensal
+    dpf: {anexo: "2.9", linha: Variação Nominal}
+    aliases: [variacao da dpf, fatores de variacao da divida, variacao do estoque da divida]
+    notas: "Diferença entre o estoque do mês e o do mês anterior = emissão/resgate líquido + juros apropriados (incluída a variação cambial da DPFe)."
+
+  - id: dpf_emissao_resgate_liquido
+    nome: DPF — emissão líquida (emissões menos resgates) no mês
+    subtema: divida federal
+    unidade: R$ milhões
+    periodicidade: mensal
+    dpf: {anexo: "2.9", linha: I.1 - Emissão/Resgate Líquido}
+    aliases: [emissao liquida da divida, financiamento liquido do tesouro, emissoes menos resgates]
+    notas: "Positivo = o Tesouro emitiu mais do que resgatou no mês (a dívida cresceu por captação, não por juros)."
+
+  - id: dpf_juros_apropriados
+    nome: DPF — juros apropriados no mês
+    subtema: divida federal
+    unidade: R$ milhões
+    periodicidade: mensal
+    dpf: {anexo: "2.9", linha: I.2 - Juros Apropriados}
+    aliases: [juros da divida federal, juros apropriados dpf, apropriacao de juros]
+    notas: "Atualização monetária e juros reais da DPMFi mais juros e variação cambial da DPFe, por competência. Difere dos juros nominais do setor público (NFSP, Banco Central), que têm outro perímetro e metodologia."

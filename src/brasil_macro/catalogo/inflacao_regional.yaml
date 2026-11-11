@@ -1,0 +1,92 @@
+tema: inflacao
+titulo: Inflação — IPCA por região metropolitana (IBGE, tabela 7060)
+indicadores:
+  - id: ipca_rm_belem
+    nome: IPCA — variação mensal, Belém (PA)
+    subtema: ipca-regional
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 7060, variavel: 63, classificacoes: {315: 7169}, nivel: n7, localidade: "1501"}
+    aliases: [ipca belem, inflacao belem, ipca norte]
+    notas: Série da tabela 7060 do SIDRA, que começa em 2020. Para o índice nacional, use ipca.
+
+  - id: ipca_rm_fortaleza
+    nome: IPCA — variação mensal, Fortaleza (CE)
+    subtema: ipca-regional
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 7060, variavel: 63, classificacoes: {315: 7169}, nivel: n7, localidade: "2301"}
+    aliases: [ipca fortaleza, inflacao fortaleza, ipca nordeste ceara]
+    notas: Série da tabela 7060 do SIDRA, que começa em 2020. Para o índice nacional, use ipca.
+
+  - id: ipca_rm_recife
+    nome: IPCA — variação mensal, Recife (PE)
+    subtema: ipca-regional
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 7060, variavel: 63, classificacoes: {315: 7169}, nivel: n7, localidade: "2601"}
+    aliases: [ipca recife, inflacao recife, ipca pernambuco]
+    notas: Série da tabela 7060 do SIDRA, que começa em 2020. Para o índice nacional, use ipca.
+
+  - id: ipca_rm_salvador
+    nome: IPCA — variação mensal, Salvador (BA)
+    subtema: ipca-regional
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 7060, variavel: 63, classificacoes: {315: 7169}, nivel: n7, localidade: "2901"}
+    aliases: [ipca salvador, inflacao salvador, ipca bahia]
+    notas: Série da tabela 7060 do SIDRA, que começa em 2020. Para o índice nacional, use ipca.
+
+  - id: ipca_rm_belo_horizonte
+    nome: IPCA — variação mensal, Belo Horizonte (MG)
+    subtema: ipca-regional
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 7060, variavel: 63, classificacoes: {315: 7169}, nivel: n7, localidade: "3101"}
+    aliases: [ipca belo horizonte, inflacao bh, ipca minas]
+    notas: Série da tabela 7060 do SIDRA, que começa em 2020. Para o índice nacional, use ipca.
+
+  - id: ipca_rm_grande_vitoria
+    nome: IPCA — variação mensal, Grande Vitória (ES)
+    subtema: ipca-regional
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 7060, variavel: 63, classificacoes: {315: 7169}, nivel: n7, localidade: "3201"}
+    aliases: [ipca vitoria, ipca espirito santo, inflacao vitoria]
+    notas: Série da tabela 7060 do SIDRA, que começa em 2020. Para o índice nacional, use ipca.
+
+  - id: ipca_rm_rio_de_janeiro
+    nome: IPCA — variação mensal, Rio de Janeiro (RJ)
+    subtema: ipca-regional
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 7060, variavel: 63, classificacoes: {315: 7169}, nivel: n7, localidade: "3301"}
+    aliases: [ipca rio, ipca rio de janeiro, inflacao rio, ipca rj]
+    notas: Série da tabela 7060 do SIDRA, que começa em 2020. Para o índice nacional, use ipca.
+
+  - id: ipca_rm_sao_paulo
+    nome: IPCA — variação mensal, São Paulo (SP)
+    subtema: ipca-regional
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 7060, variavel: 63, classificacoes: {315: 7169}, nivel: n7, localidade: "3501"}
+    aliases: [ipca sao paulo, inflacao sp, ipca sp]
+    notas: Série da tabela 7060 do SIDRA, que começa em 2020. Para o índice nacional, use ipca.
+
+  - id: ipca_rm_curitiba
+    nome: IPCA — variação mensal, Curitiba (PR)
+    subtema: ipca-regional
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 7060, variavel: 63, classificacoes: {315: 7169}, nivel: n7, localidade: "4101"}
+    aliases: [ipca curitiba, inflacao curitiba, ipca parana]
+    notas: Série da tabela 7060 do SIDRA, que começa em 2020. Para o índice nacional, use ipca.
+
+  - id: ipca_rm_porto_alegre
+    nome: IPCA — variação mensal, Porto Alegre (RS)
+    subtema: ipca-regional
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 7060, variavel: 63, classificacoes: {315: 7169}, nivel: n7, localidade: "4301"}
+    aliases: [ipca porto alegre, inflacao porto alegre, ipca rio grande do sul]
+    notas: Série da tabela 7060 do SIDRA, que começa em 2020. Para o índice nacional, use ipca.

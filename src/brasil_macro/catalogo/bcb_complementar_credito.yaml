@@ -1,0 +1,42 @@
+tema: credito
+titulo: Crédito — saldos, concessões, juros, spread e inadimplência
+indicadores:
+  - id: credito_concessoes_cheque_especial_pf
+    nome: Concessões de crédito — cheque especial (pessoa física)
+    subtema: concessoes
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20665
+    aliases: [concessao cheque especial, cheque especial concessoes]
+
+  - id: credito_juros_pf_livres
+    nome: Taxa média de juros — crédito com recursos livres, pessoa física
+    subtema: juros
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20740
+    aliases: [juros pf livres, taxa credito pf]
+
+  - id: credito_juros_financiamento_imobiliario_pf
+    nome: Taxa média de juros — financiamento imobiliário, pessoa física
+    subtema: juros
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20772
+    aliases: [juros financiamento imobiliario, taxa imobiliario]
+
+  - id: credito_inadimplencia_pf_cartao_parcelado
+    nome: Inadimplência — cartão de crédito parcelado (pessoa física)
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21128
+    aliases: [inadimplencia cartao parcelado]
+
+  - id: credito_inadimplencia_pf_cartao_total
+    nome: Inadimplência — cartão de crédito total (pessoa física)
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21129
+    aliases: [inadimplencia cartao total]

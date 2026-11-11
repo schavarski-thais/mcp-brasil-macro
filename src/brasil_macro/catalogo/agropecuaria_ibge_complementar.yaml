@@ -1,0 +1,20 @@
+tema: atividade
+titulo: Agropecuária — complementos do IBGE (milho por safra)
+indicadores:
+  - id: safra_milho_1a_estimativa
+    nome: Milho (1ª safra) — estimativa da produção do ano (LSPA)
+    subtema: agropecuaria
+    unidade: toneladas
+    periodicidade: mensal
+    sidra: {tabela: 6588, variavel: 35, classificacoes: {48: 39441}}
+    aliases: [milho primeira safra, milho 1a safra, safra de verao de milho, milho verao]
+    notas: Mesma semântica da safra agregada. Cada mês traz a estimativa do ano corrente, não a produção mensal.
+
+  - id: safra_milho_2a_estimativa
+    nome: Milho (2ª safra) — estimativa da produção do ano (LSPA)
+    subtema: agropecuaria
+    unidade: toneladas
+    periodicidade: mensal
+    sidra: {tabela: 6588, variavel: 35, classificacoes: {48: 39442}}
+    aliases: [milho segunda safra, milho 2a safra, safra safrinha, milho safrinha]
+    notas: Mesma semântica da safra agregada. Cada mês traz a estimativa do ano corrente, não a produção mensal.

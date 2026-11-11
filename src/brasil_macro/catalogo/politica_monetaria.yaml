@@ -1,0 +1,485 @@
+tema: politica_monetaria
+titulo: Política monetária, juros e agregados monetários
+indicadores:
+  - id: selic_meta
+    nome: Taxa Selic — meta definida pelo Copom
+    subtema: selic
+    unidade: "% a.a."
+    periodicidade: diaria
+    sgs: 432
+    aliases: [meta selic, taxa basica de juros, juros basicos]
+    destaque: true
+    painel_geral: true
+
+  - id: selic_over
+    nome: Taxa Selic efetiva (over) — anualizada, base 252
+    subtema: selic
+    unidade: "% a.a."
+    periodicidade: diaria
+    sgs: 1178
+    aliases: [selic over, selic efetiva, selic diaria anualizada]
+    destaque: true
+
+  - id: selic_over_diaria
+    nome: Taxa Selic efetiva (over) — taxa ao dia
+    subtema: selic
+    unidade: "% a.d."
+    periodicidade: diaria
+    sgs: 11
+    aliases: [selic over ao dia, fator diario selic]
+    notas: Taxa diária; use transformacao=acumulado_12m ou acumulado_ano para compor o rendimento no período.
+
+  - id: selic_mes_anualizada
+    nome: Taxa Selic acumulada no mês — anualizada, base 252
+    subtema: selic
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 4189
+    aliases: [selic mensal anualizada]
+
+  - id: selic_mes
+    nome: Taxa Selic acumulada no mês
+    subtema: selic
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 4390
+    aliases: [selic mensal, selic no mes]
+    notas: O mês corrente é parcial até o último dia útil.
+
+  - id: cdi
+    nome: Taxa CDI — anualizada, base 252
+    subtema: cdi
+    unidade: "% a.a."
+    periodicidade: diaria
+    sgs: 4389
+    aliases: [cdi over, di]
+
+  - id: cdi_diaria
+    nome: Taxa CDI — taxa ao dia
+    subtema: cdi
+    unidade: "% a.d."
+    periodicidade: diaria
+    sgs: 12
+    aliases: [cdi ao dia]
+
+  - id: cdi_mes
+    nome: Taxa CDI acumulada no mês
+    subtema: cdi
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 4391
+    aliases: [cdi mensal]
+    notas: O mês corrente é parcial até o último dia útil.
+
+  - id: tr
+    nome: Taxa Referencial (TR)
+    subtema: outras taxas
+    unidade: "% a.m."
+    periodicidade: diaria
+    sgs: 226
+    aliases: [taxa referencial]
+    notas: Cada observação vale para o período de um mês iniciado na data indicada.
+
+  - id: tjlp
+    nome: Taxa de Juros de Longo Prazo (TJLP)
+    subtema: outras taxas
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 256
+    aliases: [juros de longo prazo]
+
+  - id: meta_inflacao
+    nome: Meta para a inflação (centro da meta)
+    subtema: regime de metas
+    unidade: "%"
+    periodicidade: anual
+    sgs: 13521
+    aliases: [meta de inflacao, centro da meta, cmn]
+    destaque: true
+
+  - id: base_monetaria
+    nome: Base monetária restrita — saldo em final de período
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1788
+    aliases: [bm, base monetaria restrita]
+
+  - id: m1
+    nome: Meios de pagamento — M1 (saldo em final de período)
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27791
+    aliases: [meios de pagamento restritos]
+
+  - id: m2
+    nome: Meios de pagamento amplos — M2 (saldo em final de período)
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27810
+
+  - id: m3
+    nome: Meios de pagamento amplos — M3 (saldo em final de período)
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27813
+
+  - id: m4
+    nome: Meios de pagamento amplos — M4 (saldo em final de período)
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27815
+
+  - id: tbf
+    nome: Taxa básica financeira (TBF)
+    subtema: outras taxas
+    unidade: "% a.m."
+    periodicidade: diaria
+    sgs: 253
+    aliases: [taxa basica financeira]
+    notas: Cada observação vale para o período de um mês iniciado na data indicada.
+
+  - id: tbf_anualizada_mes
+    nome: Taxa básica financeira (TBF) — Primeiro dia do mês anualizada na base 252
+    subtema: outras taxas
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 7814
+    notas: Valor do primeiro dia do mês.
+
+  - id: tjlp_mensal
+    nome: Taxas de juros — TJLP mensal
+    subtema: outras taxas
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 7815
+    aliases: [tjlp ao mes]
+    notas: Taxa mensal equivalente à TJLP; a série tjlp traz a mesma taxa em % a.a.
+
+  - id: taxa_extramercado
+    nome: Taxa Extramercado
+    subtema: outras taxas
+    unidade: "% a.a."
+    periodicidade: diaria
+    sgs: 27804
+    aliases: [taxa extramercado bcb]
+    notas: Taxa extramercado divulgada pelo Banco Central; o fator diário correspondente é a série 27803 do SGS.
+
+  - id: poupanca_rentabilidade
+    nome: Depósitos de poupança a partir de 04.05.2012 — Rentabilidade no período
+    subtema: poupanca
+    unidade: "% a.m."
+    periodicidade: diaria
+    sgs: 195
+    aliases: [rendimento da poupanca, poupanca]
+    notas: "Rentabilidade da poupança para depósitos a partir de 04.05.2012 (regra atual: 70% da Selic + TR quando a Selic está até 8,5% a.a.; 0,5% a.m. + TR acima disso). A série é diária; cada observação traz a rentabilidade do período mensal que começa na data (aniversário)."
+    destaque: true
+
+  - id: poupanca_rentabilidade_antiga
+    nome: Depósitos de poupança até 03.05.2012 — Rentabilidade no período
+    subtema: poupanca
+    unidade: "% a.m."
+    periodicidade: diaria
+    sgs: 25
+    aliases: [poupanca antiga]
+    notas: Rentabilidade para depósitos feitos até 03.05.2012 (0,5% a.m. + TR). Cada observação traz a rentabilidade do período mensal que começa na data.
+
+  - id: poupanca_saldo_sbpe_rural
+    nome: Saldo mensal de depósitos de poupança — SBPE e rural
+    subtema: poupanca
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 7836
+    aliases: [saldo da poupanca, estoque da poupanca]
+    notas: Saldo mensal dos depósitos de poupança SBPE e rural.
+    destaque: true
+
+  - id: poupanca_saldo_m4
+    nome: Meios de pagamento amplos — Depósito de Poupança (saldo em final de período)
+    subtema: poupanca
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1835
+    notas: Componente de poupança dos meios de pagamento amplos (M4).
+
+  - id: compulsorios_total
+    nome: Recolhimentos obrigatórios de instituições financeiras — Saldo total
+    subtema: compulsorios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 17633
+    aliases: [recolhimentos obrigatorios, depositos compulsorios, compulsorio]
+    destaque: true
+
+  - id: compulsorios_especie
+    nome: Base monetária ampliada — Depósitos compulsórios em espécie (saldo em final de período)
+    subtema: compulsorios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1828
+    aliases: [compulsorios em especie]
+
+  - id: compulsorios_a_vista
+    nome: Recolhimentos obrigatórios de instituições financeiras — Recursos à vista em espécie (não remunerados)
+    subtema: compulsorios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1849
+    aliases: [compulsorio sobre depositos a vista]
+    notas: Não remunerados.
+
+  - id: compulsorios_a_prazo
+    nome: Recolhimentos obrigatórios de instituições financeiras — Depósitos a prazo em espécie (remunerados)
+    subtema: compulsorios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1850
+    aliases: [compulsorio sobre depositos a prazo]
+    notas: Remunerados.
+
+  - id: compulsorios_poupanca
+    nome: Recolhimentos obrigatórios de instituições financeiras — Depósitos de poupança em espécie (remunerados)
+    subtema: compulsorios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1848
+    aliases: [compulsorio da poupanca]
+    notas: Remunerados.
+
+  - id: compulsorios_outros
+    nome: Outros recolhimentos — Total
+    subtema: compulsorios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 17625
+
+  - id: compulsorios_juros_base_ampliada
+    nome: Fatores condicionantes da base monetária ampliada — Juros sobre depósitos compulsórios (saldo em final de período)
+    subtema: compulsorios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 7539
+
+  - id: base_monetaria_diaria
+    nome: BM — Base monetária restrita (saldo diário)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: diaria
+    sgs: 1782
+    aliases: [base monetaria diaria]
+
+  - id: papel_moeda_circulacao_diaria
+    nome: BM — Papel moeda em circulação (saldo diário)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: diaria
+    sgs: 1780
+    aliases: [papel moeda em circulacao]
+
+  - id: reservas_bancarias_diaria
+    nome: BM — Reservas bancárias (saldo diário)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: diaria
+    sgs: 1781
+    aliases: [reservas bancarias]
+
+  - id: papel_moeda_circulacao
+    nome: BM — Papel moeda em circulação (saldo em final de período)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1786
+
+  - id: reservas_bancarias
+    nome: BM — Reservas bancárias (saldo em final de período)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1787
+
+  - id: base_monetaria_sazonal
+    nome: BM — Base monetária restrita (saldo em final de período) — sazonalmente ajustado
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27840
+    aliases: [bm dessazonalizada]
+
+  - id: base_monetaria_ampliada
+    nome: Base Monetária Ampliada (saldo em final de período)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1833
+    aliases: [bma]
+
+  - id: fatores_bm_titulos_publicos
+    nome: Fatores condicionantes da base monetária — Operações com títulos públicos federais — Total (saldo em final de período)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1809
+    aliases: [fatores condicionantes, operacoes com titulos publicos]
+    notas: "Fator condicionante da base: positivo = expansão (Banco Central compra títulos), negativo = contração."
+
+  - id: fatores_bm_tesouro_conta_unica
+    nome: Fatores condicionantes da base monetária — Tesouro Nacional — Conta única (saldo em final de período)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1810
+    aliases: [conta unica do tesouro]
+    notas: "Fator condicionante da base: positivo = expansão da base."
+
+  - id: fatores_bm_setor_externo
+    nome: Fatores condicionantes da base monetária — Operações com o setor externo (saldo em final de período)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1811
+    aliases: [operacoes com o setor externo]
+    notas: "Fator condicionante da base: positivo = expansão (compras de divisas pelo Banco Central)."
+
+  - id: fatores_bm_depositos_instituicoes
+    nome: Fatores condicionantes da base monetária — Depósitos de instituições financeiras (saldo em final de período)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1815
+    notas: "Fator condicionante da base: sinal negativo = contração."
+
+  - id: fatores_bm_outras_operacoes
+    nome: Fatores condicionantes da base monetária — Autoridade Monetária — Outras operações (saldo em final de período)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1818
+
+  - id: titulos_publicos_federais_base_ampliada
+    nome: Base monetária ampliada — Títulos públicos federais-total (saldo em final de período)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 7535
+
+  - id: juros_titulos_publicos_base_ampliada
+    nome: Fatores condicionantes da base monetária ampliada — Juros sobre títulos públicos federais (saldo em final de período)
+    subtema: base monetaria
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 7538
+
+  - id: m1_sazonal
+    nome: Meios de pagamento — M1 (saldo em final de período) — Novo — sazonalmente ajustado
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27841
+    aliases: [m1 dessazonalizado]
+
+  - id: m2_sazonal
+    nome: Meios de pagamento amplos — M2 (saldo em final de período) — Novo — sazonalmente ajustado
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27842
+    aliases: [m2 dessazonalizado]
+
+  - id: m1_depositos_a_vista
+    nome: Meios de pagamento — Depósitos à vista (saldo em final de período) — Novo
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27790
+
+  - id: m2_depositos_a_prazo
+    nome: Meios de pagamento amplos — Depósitos a prazo (saldo em final de período) — Novo
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27805
+
+  - id: m2_letras_financeiras
+    nome: Meios de pagamento amplos — Letras financeiras (saldo em final de período) — Novo
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27806
+    aliases: [lf]
+
+  - id: m2_letras_credito
+    nome: Meios de pagamento amplos — Letras de crédito (saldo em final de período) — Novo
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27807
+    aliases: [lci lca]
+    notas: Letras de crédito imobiliário e do agronegócio.
+
+  - id: m2_titulos_privados
+    nome: Meios de pagamento amplos — Títulos privados em poder do público (saldo em final de período) — Novo
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27809
+
+  - id: m3_quotas_fundos_monetarios
+    nome: Meios de pagamento amplos — Quotas de fundos monetários (saldo em final de período) — Novo
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27811
+    aliases: [fundos monetarios]
+
+  - id: m3_compromissadas_privadas
+    nome: Meios de pagamento amplos — Operações compromissadas com títulos privados (saldo em final de período) — Novo
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27812
+
+  - id: m4_titulos_federais_publico
+    nome: Meios de pagamento amplos — Títulos federais em poder do público/Selic (saldo em final de período) — Novo
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27814
+
+  - id: m4_compromissadas_selic
+    nome: Meios de pagamento amplos — Operações compromissadas/Selic (saldo em final de período)
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 1839
+    aliases: [operacoes compromissadas]
+    notas: Saldo de operações compromissadas com títulos federais incluído em M4 (série da metodologia antiga, ainda atualizada).
+
+  - id: haveres_nao_residentes
+    nome: Haveres de não residentes (saldo em final de período)
+    subtema: agregados monetarios
+    unidade: R$ mil
+    periodicidade: mensal
+    sgs: 27816
+
+  - id: intervencoes_bcb_a_termo
+    nome: Intervenções líquidas do Banco Central — a termo — contratos liquidados — diária
+    subtema: intervencoes cambiais
+    unidade: US$ (milhões)
+    periodicidade: diaria
+    sgs: 24425
+    aliases: [swap cambial, intervencao a termo]
+    notas: Intervenções líquidas do Banco Central em contratos a termo liquidados no dia; valor zero = sem intervenção.
+
+  - id: intervencoes_bcb_linhas
+    nome: Intervenções líquidas do Banco Central — empréstimos em moeda estrangeira e operações compromissadas em moeda estrangeira — contratos liquidados — diária
+    subtema: intervencoes cambiais
+    unidade: US$ (milhões)
+    periodicidade: diaria
+    sgs: 24427
+    aliases: [linhas em moeda estrangeira]
+    notas: Empréstimos em moeda estrangeira e compromissadas em moeda estrangeira, contratos liquidados no dia; valor zero = sem operação.

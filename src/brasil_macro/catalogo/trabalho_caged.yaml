@@ -1,0 +1,86 @@
+tema: trabalho
+titulo: Mercado de trabalho — desocupação, ocupação, rendimento e emprego formal
+indicadores:
+  # --- Novo CAGED (Ministério do Trabalho e Emprego), distribuído pelo Ipeadata
+  - id: caged_saldo
+    nome: Novo CAGED — saldo de empregos formais (admissões menos desligamentos), com ajuste
+    subtema: emprego formal
+    unidade: pessoas
+    periodicidade: mensal
+    ipea: CAGED12_SALDONAJU12
+    produtor: Ministério do Trabalho e Emprego
+    aliases: [caged, novo caged, saldo do caged, geracao de empregos, criacao de vagas, emprego formal, vagas com carteira]
+    notas: "Série a partir de jan/2020. O ajuste incorpora declarações entregues fora do prazo, por isso os meses anteriores são revisados a cada divulgação. O Ipeadata pode levar alguns dias para incorporar a divulgação do MTE. Use transformacao=soma_12m para o acumulado em 12 meses."
+    destaque: true
+
+  - id: caged_saldo_sem_ajuste
+    nome: Novo CAGED — saldo de empregos formais, sem ajuste
+    subtema: emprego formal
+    unidade: pessoas
+    periodicidade: mensal
+    ipea: CAGED12_SALDON12
+    produtor: Ministério do Trabalho e Emprego
+    aliases: [caged sem ajuste, saldo caged divulgado]
+    notas: "Série a partir de jan/2020, com os valores das declarações recebidas dentro do prazo (número divulgado em cada mês, sem revisão posterior)."
+
+  - id: caged_admissoes
+    nome: Novo CAGED — admissões, com ajuste
+    subtema: emprego formal
+    unidade: pessoas
+    periodicidade: mensal
+    ipea: CAGED12_ADMISNAJU12
+    produtor: Ministério do Trabalho e Emprego
+    aliases: [admissoes, contratacoes, caged admissoes]
+    notas: "Série a partir de jan/2020. O ajuste incorpora declarações entregues fora do prazo."
+
+  - id: caged_admissoes_sem_ajuste
+    nome: Novo CAGED — admissões, sem ajuste
+    subtema: emprego formal
+    unidade: pessoas
+    periodicidade: mensal
+    ipea: CAGED12_ADMISN12
+    produtor: Ministério do Trabalho e Emprego
+    aliases: [admissoes sem ajuste]
+    notas: "Série a partir de jan/2020."
+
+  - id: caged_desligamentos
+    nome: Novo CAGED — desligamentos, com ajuste
+    subtema: emprego formal
+    unidade: pessoas
+    periodicidade: mensal
+    ipea: CAGED12_DESLIGNAJU12
+    produtor: Ministério do Trabalho e Emprego
+    aliases: [desligamentos, demissoes, caged demissoes]
+    notas: "Série a partir de jan/2020. O ajuste incorpora declarações entregues fora do prazo."
+
+  - id: caged_desligamentos_sem_ajuste
+    nome: Novo CAGED — desligamentos, sem ajuste
+    subtema: emprego formal
+    unidade: pessoas
+    periodicidade: mensal
+    ipea: CAGED12_DESLIGN12
+    produtor: Ministério do Trabalho e Emprego
+    aliases: [desligamentos sem ajuste, demissoes sem ajuste]
+    notas: "Série a partir de jan/2020."
+
+  # --- salário mínimo
+  - id: salario_minimo
+    nome: Salário mínimo nominal vigente
+    subtema: salario minimo
+    unidade: R$
+    periodicidade: mensal
+    ipea: MTE12_SALMIN12
+    produtor: Governo Federal (valor fixado em lei ou decreto)
+    aliases: [salario minimo, salario minimo nominal, piso nacional]
+    notas: "Desde jul/1940, na moeda de cada época. Não considera abonos; antes da unificação nacional (mai/1984), refere-se ao maior salário mínimo vigente no país."
+    destaque: true
+
+  - id: salario_minimo_real
+    nome: Salário mínimo real — a preços do último mês (deflator INPC)
+    subtema: salario minimo
+    unidade: R$ do último mês da série
+    periodicidade: mensal
+    ipea: GAC12_SALMINRE12
+    produtor: IPEA
+    aliases: [salario minimo real, poder de compra do salario minimo]
+    notas: "Elaboração do IPEA: salário mínimo nominal deflacionado pelo INPC (IBGE) desde abr/1979; antes disso, por índices de custo de vida da época. Toda a série é recalculada a cada mês, a preços do último mês disponível."

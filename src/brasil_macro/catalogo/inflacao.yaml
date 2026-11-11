@@ -1,0 +1,374 @@
+tema: inflacao
+titulo: Inflação — IPCA, núcleos, aberturas e outros índices de preços
+indicadores:
+  - id: ipca
+    nome: IPCA — variação mensal
+    subtema: indice cheio
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 433
+    produtor: IBGE
+    aliases: [inflacao, inflacao mensal, indice de precos ao consumidor amplo]
+    notas: Use transformacao=acumulado_12m, acumulado_ano ou mm3m_anualizada para as leituras usuais.
+    destaque: true
+    painel_geral: true
+
+  - id: ipca_12m
+    nome: IPCA — variação acumulada em 12 meses
+    subtema: indice cheio
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 13522
+    produtor: IBGE
+    aliases: [inflacao 12 meses, inflacao acumulada, ipca acumulado]
+    destaque: true
+    painel_geral: true
+
+  - id: ipca15
+    nome: IPCA-15 — variação mensal
+    subtema: indice cheio
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 7478
+    produtor: IBGE
+    aliases: [ipca 15, previa da inflacao]
+    destaque: true
+
+  - id: inpc
+    nome: INPC — variação mensal
+    subtema: outros indices
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 188
+    produtor: IBGE
+    aliases: [indice nacional de precos ao consumidor]
+
+  # --- aberturas do IPCA calculadas pelo Banco Central
+  - id: ipca_livres
+    nome: IPCA — preços livres, variação mensal
+    subtema: aberturas bcb
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 11428
+    aliases: [livres, itens livres]
+    destaque: true
+
+  - id: ipca_monitorados
+    nome: IPCA — preços monitorados (administrados), variação mensal
+    subtema: aberturas bcb
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 4449
+    aliases: [administrados, monitorados, precos administrados]
+    destaque: true
+
+  - id: ipca_servicos
+    nome: IPCA — serviços, variação mensal
+    subtema: aberturas bcb
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 10844
+    aliases: [inflacao de servicos, servicos]
+    destaque: true
+
+  - id: ipca_comercializaveis
+    nome: IPCA — comercializáveis, variação mensal
+    subtema: aberturas bcb
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 4447
+    aliases: [tradables, comercializaveis]
+
+  - id: ipca_nao_comercializaveis
+    nome: IPCA — não comercializáveis, variação mensal
+    subtema: aberturas bcb
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 4448
+    aliases: [non tradables, nao comercializaveis]
+
+  - id: ipca_bens_nao_duraveis
+    nome: IPCA — bens não duráveis, variação mensal
+    subtema: aberturas bcb
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 10841
+    aliases: [nao duraveis]
+
+  - id: ipca_bens_semiduraveis
+    nome: IPCA — bens semiduráveis, variação mensal
+    subtema: aberturas bcb
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 10842
+    aliases: [semiduraveis, semi duraveis]
+
+  - id: ipca_bens_duraveis
+    nome: IPCA — bens duráveis, variação mensal
+    subtema: aberturas bcb
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 10843
+    aliases: [duraveis]
+
+  - id: ipca_difusao
+    nome: IPCA — índice de difusão
+    subtema: aberturas bcb
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21379
+    aliases: [difusao, espalhamento da inflacao]
+    notas: Percentual dos subitens do IPCA com variação positiva no mês.
+    destaque: true
+
+  # --- núcleos de inflação calculados pelo Banco Central
+  - id: ipca_nucleo_ex0
+    nome: IPCA — núcleo por exclusão EX0 (sem monitorados e alimentação no domicílio)
+    subtema: nucleos
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 11427
+    aliases: [nucleo ex0, core ex0, nucleo por exclusao]
+
+  - id: ipca_nucleo_ex1
+    nome: IPCA — núcleo por exclusão EX1
+    subtema: nucleos
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 16121
+    aliases: [nucleo ex1, core ex1]
+
+  - id: ipca_nucleo_ex2
+    nome: IPCA — núcleo por exclusão EX2
+    subtema: nucleos
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 27838
+    aliases: [nucleo ex2, core ex2]
+
+  - id: ipca_nucleo_ex3
+    nome: IPCA — núcleo por exclusão EX3
+    subtema: nucleos
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 27839
+    aliases: [nucleo ex3, core ex3]
+    destaque: true
+
+  - id: ipca_nucleo_exfe
+    nome: IPCA — núcleo ex-alimentação e energia (EX-FE)
+    subtema: nucleos
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 28751
+    aliases: [nucleo exfe, core ex food energy, ex alimentos e energia]
+
+  - id: ipca_nucleo_ms
+    nome: IPCA — núcleo de médias aparadas com suavização (MS)
+    subtema: nucleos
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 4466
+    aliases: [nucleo ms, medias aparadas com suavizacao]
+    destaque: true
+
+  - id: ipca_nucleo_ma
+    nome: IPCA — núcleo de médias aparadas sem suavização (MA)
+    subtema: nucleos
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 11426
+    aliases: [nucleo ma, medias aparadas sem suavizacao]
+
+  - id: ipca_nucleo_dp
+    nome: IPCA — núcleo de dupla ponderação (DP)
+    subtema: nucleos
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 16122
+    aliases: [nucleo dp, dupla ponderacao]
+
+  - id: ipca_nucleo_p55
+    nome: IPCA — núcleo percentil 55 (P55)
+    subtema: nucleos
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 28750
+    aliases: [nucleo p55, percentil 55]
+
+  # --- séries direto do IBGE (SIDRA)
+  - id: ipca_indice
+    nome: IPCA — número-índice (dezembro de 1993 = 100)
+    subtema: indice cheio
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 1737, variavel: 2266}
+    aliases: [numero indice ipca, deflator, corrigir pela inflacao]
+    notas: Série desde 1979; serve para deflacionar valores (razão entre os índices de dois meses).
+
+  - id: ipca15_12m
+    nome: IPCA-15 — variação acumulada em 12 meses
+    subtema: indice cheio
+    unidade: "%"
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1705, variavel: 1120, classificacoes: {315: 7169}}
+      - {tabela: 7062, variavel: 1120, classificacoes: {315: 7169}}
+    aliases: [ipca 15 acumulado, previa da inflacao 12 meses]
+
+  - id: inpc_12m
+    nome: INPC — variação acumulada em 12 meses
+    subtema: outros indices
+    unidade: "%"
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1100, variavel: 2292, classificacoes: {315: 7169}}
+      - {tabela: 7063, variavel: 2292, classificacoes: {315: 7169}}
+    aliases: [inpc acumulado, reajuste salario minimo]
+
+  - id: ipca_alimentacao_bebidas
+    nome: IPCA — grupo Alimentação e bebidas, variação mensal
+    subtema: grupos ibge
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1419, variavel: 63, classificacoes: {315: 7170}}
+      - {tabela: 7060, variavel: 63, classificacoes: {315: 7170}}
+    aliases: [alimentos, inflacao de alimentos, comida]
+
+  - id: ipca_alimentacao_domicilio
+    nome: IPCA — subgrupo Alimentação no domicílio, variação mensal
+    subtema: grupos ibge
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1419, variavel: 63, classificacoes: {315: 7171}}
+      - {tabela: 7060, variavel: 63, classificacoes: {315: 7171}}
+    aliases: [alimentacao no domicilio, supermercado]
+
+  - id: ipca_alimentacao_fora_domicilio
+    nome: IPCA — subgrupo Alimentação fora do domicílio, variação mensal
+    subtema: grupos ibge
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1419, variavel: 63, classificacoes: {315: 7432}}
+      - {tabela: 7060, variavel: 63, classificacoes: {315: 7432}}
+    aliases: [alimentacao fora, restaurantes]
+
+  - id: ipca_habitacao
+    nome: IPCA — grupo Habitação, variação mensal
+    subtema: grupos ibge
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1419, variavel: 63, classificacoes: {315: 7445}}
+      - {tabela: 7060, variavel: 63, classificacoes: {315: 7445}}
+    aliases: [moradia, aluguel e energia]
+
+  - id: ipca_artigos_residencia
+    nome: IPCA — grupo Artigos de residência, variação mensal
+    subtema: grupos ibge
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1419, variavel: 63, classificacoes: {315: 7486}}
+      - {tabela: 7060, variavel: 63, classificacoes: {315: 7486}}
+    aliases: [moveis e eletrodomesticos]
+
+  - id: ipca_vestuario
+    nome: IPCA — grupo Vestuário, variação mensal
+    subtema: grupos ibge
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1419, variavel: 63, classificacoes: {315: 7558}}
+      - {tabela: 7060, variavel: 63, classificacoes: {315: 7558}}
+    aliases: [roupas]
+
+  - id: ipca_transportes
+    nome: IPCA — grupo Transportes, variação mensal
+    subtema: grupos ibge
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1419, variavel: 63, classificacoes: {315: 7625}}
+      - {tabela: 7060, variavel: 63, classificacoes: {315: 7625}}
+    aliases: [combustiveis e transporte]
+
+  - id: ipca_saude_cuidados_pessoais
+    nome: IPCA — grupo Saúde e cuidados pessoais, variação mensal
+    subtema: grupos ibge
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1419, variavel: 63, classificacoes: {315: 7660}}
+      - {tabela: 7060, variavel: 63, classificacoes: {315: 7660}}
+    aliases: [saude, plano de saude e remedios]
+
+  - id: ipca_despesas_pessoais
+    nome: IPCA — grupo Despesas pessoais, variação mensal
+    subtema: grupos ibge
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1419, variavel: 63, classificacoes: {315: 7712}}
+      - {tabela: 7060, variavel: 63, classificacoes: {315: 7712}}
+    aliases: [servicos pessoais, recreacao]
+
+  - id: ipca_educacao
+    nome: IPCA — grupo Educação, variação mensal
+    subtema: grupos ibge
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1419, variavel: 63, classificacoes: {315: 7766}}
+      - {tabela: 7060, variavel: 63, classificacoes: {315: 7766}}
+    aliases: [mensalidades escolares]
+
+  - id: ipca_comunicacao
+    nome: IPCA — grupo Comunicação, variação mensal
+    subtema: grupos ibge
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra:
+      - {tabela: 1419, variavel: 63, classificacoes: {315: 7786}}
+      - {tabela: 7060, variavel: 63, classificacoes: {315: 7786}}
+    aliases: [telefonia e internet]
+
+  - id: ipp
+    nome: IPP — Índice de Preços ao Produtor, indústria geral, variação mensal
+    subtema: precos ao produtor
+    unidade: "% a.m."
+    periodicidade: mensal
+    sidra: {tabela: 6903, variavel: 1396, classificacoes: {842: 46608}}
+    aliases: [precos ao produtor, inflacao no atacado industrial, porta de fabrica]
+
+  - id: ipp_12m
+    nome: IPP — Índice de Preços ao Produtor, indústria geral, variação em 12 meses
+    subtema: precos ao produtor
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 6903, variavel: 1394, classificacoes: {842: 46608}}
+    aliases: [precos ao produtor 12 meses]
+
+  # --- índices de produtor privado distribuídos pelo BCB (desativados por padrão)
+  - id: igpm
+    nome: IGP-M — variação mensal
+    subtema: outros indices
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 189
+    produtor: FGV
+    oficial: false
+    aliases: [igp m, indice geral de precos mercado]
+
+  - id: igpdi
+    nome: IGP-DI — variação mensal
+    subtema: outros indices
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 190
+    produtor: FGV
+    oficial: false
+    aliases: [igp di]

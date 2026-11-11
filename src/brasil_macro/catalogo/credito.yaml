@@ -1,0 +1,780 @@
+tema: credito
+titulo: Crédito — saldos, concessões, juros, spread e inadimplência
+indicadores:
+  - id: credito_saldo_total
+    nome: Saldo da carteira de crédito — total
+    subtema: saldo
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20539
+    aliases: [estoque de credito, carteira de credito]
+    destaque: true
+
+  - id: credito_saldo_pj
+    nome: Saldo da carteira de crédito — pessoas jurídicas
+    subtema: saldo
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20540
+    aliases: [credito empresas, credito pj]
+
+  - id: credito_saldo_pf
+    nome: Saldo da carteira de crédito — pessoas físicas
+    subtema: saldo
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20541
+    aliases: [credito familias, credito pf]
+
+  - id: credito_pib
+    nome: Saldo da carteira de crédito em relação ao PIB
+    subtema: saldo
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 20622
+    aliases: [credito pib, relacao credito pib]
+    destaque: true
+
+  - id: credito_concessoes
+    nome: Concessões de crédito — total
+    subtema: concessoes
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20631
+    aliases: [novas concessoes]
+    destaque: true
+
+  - id: credito_taxa_juros
+    nome: Taxa média de juros das operações de crédito — total
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20714
+    aliases: [juros do credito, taxa media de juros]
+    destaque: true
+
+  - id: credito_spread
+    nome: Spread médio das operações de crédito — total
+    subtema: juros e spread
+    unidade: p.p.
+    periodicidade: mensal
+    sgs: 20783
+    aliases: [spread bancario]
+    destaque: true
+
+  - id: credito_inadimplencia
+    nome: Inadimplência da carteira de crédito — total (atrasos acima de 90 dias)
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21082
+    aliases: [inadimplencia, calote]
+    destaque: true
+
+  - id: endividamento_familias
+    nome: Endividamento das famílias com o SFN em relação à renda acumulada em 12 meses
+    subtema: familias
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 29037
+    aliases: [endividamento das familias, divida das familias]
+    destaque: true
+
+  - id: comprometimento_renda_familias
+    nome: Comprometimento de renda das famílias com o serviço da dívida — com ajuste sazonal
+    subtema: familias
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 29034
+    aliases: [comprometimento de renda, servico da divida das familias]
+    destaque: true
+
+  - id: credito_saldo_livres
+    nome: Saldo da carteira de crédito com recursos livres — Total
+    subtema: saldo
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20542
+    aliases: [recursos livres, credito livre]
+
+  - id: credito_saldo_livres_pj
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas jurídicas — Total
+    subtema: saldo
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20543
+    aliases: [credito livre pj]
+
+  - id: credito_saldo_livres_pf
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas físicas — Total
+    subtema: saldo
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20570
+    aliases: [credito livre pf]
+
+  - id: credito_saldo_direcionados
+    nome: Saldo da carteira de crédito com recursos direcionados — Total
+    subtema: saldo
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20593
+    aliases: [recursos direcionados, credito direcionado]
+
+  - id: credito_saldo_direcionados_pj
+    nome: Saldo da carteira de crédito com recursos direcionados — Pessoas jurídicas — Total
+    subtema: saldo
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20594
+    aliases: [credito direcionado pj]
+
+  - id: credito_saldo_direcionados_pf
+    nome: Saldo da carteira de crédito com recursos direcionados — Pessoas físicas — Total
+    subtema: saldo
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20606
+    aliases: [credito direcionado pf]
+
+  - id: credito_saldo_pf_consignado
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas físicas — Crédito pessoal consignado total
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20579
+    aliases: [consignado, credito consignado]
+
+  - id: credito_saldo_pf_consignado_inss
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas físicas — Crédito pessoal consignado para aposentados e pensionistas do INSS
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20578
+    aliases: [consignado inss, consignado aposentados]
+
+  - id: credito_saldo_pf_consignado_publico
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas físicas — Crédito pessoal consignado para trabalhadores do setor público
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20577
+    aliases: [consignado servidor publico]
+
+  - id: credito_saldo_pf_consignado_privado
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas físicas — Crédito pessoal consignado para trabalhadores do setor privado
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20576
+    aliases: [consignado clt, consignado setor privado]
+
+  - id: credito_saldo_pf_pessoal_nao_consignado
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas físicas — Crédito pessoal não consignado total
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20574
+    aliases: [credito pessoal, emprestimo pessoal]
+
+  - id: credito_saldo_pf_cheque_especial
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas físicas — Cheque especial
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20573
+    aliases: [cheque especial]
+
+  - id: credito_saldo_pf_cartao_rotativo
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas físicas — Cartão de crédito rotativo
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20587
+    aliases: [cartao rotativo, rotativo do cartao]
+
+  - id: credito_saldo_pf_cartao_parcelado
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas físicas — Cartão de crédito parcelado
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20588
+    aliases: [cartao parcelado]
+
+  - id: credito_saldo_pf_cartao_total
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas físicas — Cartão de crédito total
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20590
+    aliases: [cartao de credito]
+
+  - id: credito_saldo_pf_veiculos
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas físicas — Aquisição de veículos
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20581
+    aliases: [financiamento de veiculos, credito de veiculos]
+
+  - id: credito_saldo_pf_imobiliario
+    nome: Saldo da carteira de crédito com recursos direcionados — Pessoas físicas — Financiamento imobiliário total
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20612
+    aliases: [financiamento imobiliario, credito imobiliario]
+
+  - id: credito_saldo_pf_rural
+    nome: Saldo da carteira de crédito com recursos direcionados — Pessoas físicas — Crédito rural total
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20609
+    aliases: [credito rural pf]
+
+  - id: credito_saldo_pj_capital_giro
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas jurídicas — Capital de giro total
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20550
+    aliases: [capital de giro]
+
+  - id: credito_saldo_pj_duplicatas
+    nome: Saldo da carteira de crédito com recursos livres — Pessoas jurídicas — Desconto de duplicatas e recebíveis
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20544
+    aliases: [desconto de duplicatas, recebiveis]
+
+  - id: credito_saldo_pj_imobiliario
+    nome: Saldo da carteira de crédito com recursos direcionados — Pessoas jurídicas — Financiamento imobiliário total
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20600
+    aliases: [financiamento imobiliario pj]
+
+  - id: credito_saldo_pj_rural
+    nome: Saldo da carteira de crédito com recursos direcionados — Pessoas jurídicas — Crédito rural total
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20597
+    aliases: [credito rural pj]
+
+  - id: credito_saldo_pj_bndes
+    nome: Saldo da carteira de crédito com recursos direcionados — Pessoas jurídicas — Financiamento com recursos do BNDES total
+    subtema: modalidades
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20604
+    aliases: [bndes, credito bndes]
+
+  - id: credito_pib_livres
+    nome: Saldo da carteira de crédito com recursos livres em relação ao PIB
+    subtema: saldo
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 20625
+
+  - id: credito_pib_direcionados
+    nome: Saldo da carteira de crédito com recursos direcionados em relação ao PIB
+    subtema: saldo
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 20628
+
+  - id: credito_pib_pj
+    nome: Saldo da carteira de crédito a pessoas jurídicas em relação ao PIB
+    subtema: saldo
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 20623
+
+  - id: credito_pib_pf
+    nome: Saldo da carteira de crédito a pessoas físicas em relação ao PIB
+    subtema: saldo
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 20624
+
+  - id: credito_ampliado_total
+    nome: Saldo de crédito ampliado ao setor não financeiro — Total
+    subtema: credito ampliado
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 28183
+    aliases: [credito ampliado]
+    notas: Crédito ampliado ao setor não financeiro (inclui títulos de dívida, crédito externo e ao governo geral).
+
+  - id: credito_ampliado_governo
+    nome: Saldo de crédito ampliado concedido ao governo geral — Total
+    subtema: credito ampliado
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 28196
+
+  - id: credito_ampliado_empresas_familias
+    nome: Saldo de crédito ampliado concedido a empresas e famílias — Total
+    subtema: credito ampliado
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 28203
+
+  - id: credito_ampliado_empresas
+    nome: Saldo de crédito ampliado concedido a empresas — Total
+    subtema: credito ampliado
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 28846
+
+  - id: credito_ampliado_familias
+    nome: Saldo de crédito ampliado concedido a famílias — Total
+    subtema: credito ampliado
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 28858
+
+  - id: credito_ampliado_pib
+    nome: Saldo de crédito ampliado total em relação ao PIB
+    subtema: credito ampliado
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 28215
+
+  - id: credito_ampliado_empresas_familias_pib
+    nome: Saldo de crédito ampliado concedido a empresas e famílias em relação ao PIB
+    subtema: credito ampliado
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 28217
+
+  - id: credito_ampliado_empresas_pib
+    nome: Saldo de crédito ampliado concedido a empresas em relação ao PIB
+    subtema: credito ampliado
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 28867
+
+  - id: credito_ampliado_familias_pib
+    nome: Saldo de crédito ampliado concedido a famílias em relação ao PIB
+    subtema: credito ampliado
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 28868
+
+  - id: credito_concessoes_livres
+    nome: Concessões de crédito com recursos livres — Total
+    subtema: concessoes
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20634
+
+  - id: credito_concessoes_direcionados
+    nome: Concessões de crédito com recursos direcionados — Total
+    subtema: concessoes
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20685
+
+  - id: credito_concessoes_pj
+    nome: Concessões de crédito — Pessoas jurídicas — Total
+    subtema: concessoes
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20632
+
+  - id: credito_concessoes_pf
+    nome: Concessões de crédito — Pessoas físicas — Total
+    subtema: concessoes
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 20633
+
+  - id: credito_juros_pj
+    nome: Taxa média de juros das operações de crédito — Pessoas jurídicas — Total
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20715
+    aliases: [juros pj]
+
+  - id: credito_juros_pf
+    nome: Taxa média de juros das operações de crédito — Pessoas físicas — Total
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20716
+    aliases: [juros pf]
+
+  - id: credito_juros_livres
+    nome: Taxa média de juros das operações de crédito com recursos livres — Total
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20717
+
+  - id: credito_juros_direcionados
+    nome: Taxa média de juros das operações de crédito com recursos direcionados — Total
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20756
+
+  - id: credito_juros_pf_cheque_especial
+    nome: Taxa média de juros das operações de crédito com recursos livres — Pessoas físicas — Cheque especial
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20741
+    aliases: [juros do cheque especial]
+
+  - id: credito_juros_pf_cartao_rotativo
+    nome: Taxa média de juros das operações de crédito com recursos livres — Pessoas físicas — Cartão de crédito rotativo
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 22022
+    aliases: [juros do rotativo, juros do cartao rotativo]
+
+  - id: credito_juros_pf_cartao_total
+    nome: Taxa média de juros das operações de crédito com recursos livres — Pessoas físicas — Cartão de crédito total
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 22024
+    aliases: [juros do cartao de credito]
+
+  - id: credito_juros_pf_pessoal_nao_consignado
+    nome: Taxa média de juros das operações de crédito com recursos livres — Pessoas físicas — Crédito pessoal não consignado total
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20742
+    aliases: [juros do credito pessoal]
+
+  - id: credito_juros_pf_consignado
+    nome: Taxa média de juros das operações de crédito com recursos livres — Pessoas físicas — Crédito pessoal consignado total
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20747
+    aliases: [juros do consignado]
+
+  - id: credito_juros_pf_consignado_inss
+    nome: Taxa média de juros das operações de crédito com recursos livres — Pessoas físicas — Crédito pessoal consignado para aposentados e pensionistas do INSS
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20746
+    aliases: [juros consignado inss]
+
+  - id: credito_juros_pf_veiculos
+    nome: Taxa média de juros das operações de crédito com recursos livres — Pessoas físicas — Aquisição de veículos
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20749
+    aliases: [juros de veiculos, juros do financiamento de carros]
+
+  - id: credito_juros_pf_imobiliario
+    nome: Taxa média de juros das operações de crédito com recursos direcionados — Pessoas físicas — Financiamento imobiliário total
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20774
+    aliases: [juros do financiamento imobiliario, juros do imobiliario]
+
+  - id: credito_juros_pj_capital_giro
+    nome: Taxa média de juros das operações de crédito com recursos livres — Pessoas jurídicas — Capital de giro total
+    subtema: juros e spread
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 20725
+    aliases: [juros do capital de giro]
+
+  - id: credito_spread_pj
+    nome: Spread médio das operações de crédito — Pessoas jurídicas — Total
+    subtema: juros e spread
+    unidade: p.p.
+    periodicidade: mensal
+    sgs: 20784
+
+  - id: credito_spread_pf
+    nome: Spread médio das operações de crédito — Pessoas físicas — Total
+    subtema: juros e spread
+    unidade: p.p.
+    periodicidade: mensal
+    sgs: 20785
+
+  - id: credito_spread_livres
+    nome: Spread médio das operações de crédito com recursos livres — Total
+    subtema: juros e spread
+    unidade: p.p.
+    periodicidade: mensal
+    sgs: 20786
+
+  - id: credito_spread_direcionados
+    nome: Spread médio das operações de crédito com recursos direcionados — Total
+    subtema: juros e spread
+    unidade: p.p.
+    periodicidade: mensal
+    sgs: 20825
+
+  - id: icc_total
+    nome: Indicador de Custo do Crédito — ICC — Total
+    subtema: custo do credito
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 25351
+    aliases: [icc, indicador de custo do credito]
+    notas: "Indicador de Custo do Crédito (ICC): custo médio de toda a carteira, inclusive operações antigas — diferente da taxa média de juros das concessões."
+    destaque: true
+
+  - id: icc_pj
+    nome: Indicador de Custo do Crédito — ICC — Pessoas jurídicas — Total
+    subtema: custo do credito
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 25352
+
+  - id: icc_pf
+    nome: Indicador de Custo do Crédito — ICC — Pessoas físicas — Total
+    subtema: custo do credito
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 25353
+
+  - id: icc_livres
+    nome: Indicador de Custo do Crédito — ICC — Recursos livres — Total
+    subtema: custo do credito
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 25354
+
+  - id: icc_direcionados
+    nome: Indicador de Custo do Crédito — ICC — Recursos direcionados — Total
+    subtema: custo do credito
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 25357
+
+  - id: icc_spread_total
+    nome: Spread do ICC — Total
+    subtema: custo do credito
+    unidade: p.p.
+    periodicidade: mensal
+    sgs: 27443
+
+  - id: credito_inadimplencia_pj
+    nome: Inadimplência da carteira de crédito — Pessoas jurídicas — Total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21083
+    aliases: [inadimplencia pj]
+
+  - id: credito_inadimplencia_pf
+    nome: Inadimplência da carteira de crédito — Pessoas físicas — Total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21084
+    aliases: [inadimplencia pf]
+
+  - id: credito_inadimplencia_livres
+    nome: Inadimplência da carteira de crédito com recursos livres — Total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21085
+
+  - id: credito_inadimplencia_direcionados
+    nome: Inadimplência da carteira de crédito com recursos direcionados — Total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21132
+
+  - id: credito_inadimplencia_pf_cheque_especial
+    nome: Inadimplência da carteira de crédito com recursos livres — Pessoas físicas — Cheque especial
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21113
+
+  - id: credito_inadimplencia_pf_cartao_rotativo
+    nome: Inadimplência da carteira de crédito com recursos livres — Pessoas físicas — Cartão de crédito rotativo
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21127
+    aliases: [inadimplencia do rotativo]
+
+  - id: credito_inadimplencia_pf_pessoal_nao_consignado
+    nome: Inadimplência da carteira de crédito com recursos livres — Pessoas físicas — Crédito pessoal não consignado total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21114
+
+  - id: credito_inadimplencia_pf_consignado
+    nome: Inadimplência da carteira de crédito com recursos livres — Pessoas físicas — Crédito pessoal consignado total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21119
+
+  - id: credito_inadimplencia_pf_consignado_inss
+    nome: Inadimplência da carteira de crédito com recursos livres — Pessoas físicas — Crédito pessoal consignado para aposentados e pensionistas do INSS
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21118
+
+  - id: credito_inadimplencia_pf_veiculos
+    nome: Inadimplência da carteira de crédito com recursos livres — Pessoas físicas — Aquisição de veículos
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21121
+
+  - id: credito_inadimplencia_pf_imobiliario
+    nome: Inadimplência da carteira de crédito com recursos direcionados — Pessoas físicas — Financiamento imobiliário total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21151
+
+  - id: credito_inadimplencia_pf_rural
+    nome: Inadimplência da carteira de crédito com recursos direcionados — Pessoas físicas — Crédito rural total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21148
+
+  - id: credito_inadimplencia_pj_capital_giro
+    nome: Inadimplência da carteira de crédito com recursos livres — Pessoas jurídicas — Capital de giro total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21093
+
+  - id: credito_inadimplencia_pj_rural
+    nome: Inadimplência da carteira de crédito com recursos direcionados — Pessoas jurídicas — Crédito rural total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21136
+
+  - id: credito_inadimplencia_pj_bndes
+    nome: Inadimplência da carteira de crédito com recursos direcionados — Pessoas jurídicas — Financiamento com recursos do BNDES total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21143
+
+  - id: credito_atraso_15_90_total
+    nome: Percentual da carteira de crédito com atraso entre 15 e 90 dias — Total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21003
+    aliases: [atraso curto, atraso 15 a 90 dias]
+
+  - id: credito_atraso_15_90_pj
+    nome: Percentual da carteira de crédito com atraso entre 15 e 90 dias — Pessoas jurídicas — Total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21004
+
+  - id: credito_atraso_15_90_pf
+    nome: Percentual da carteira de crédito com atraso entre 15 e 90 dias — Pessoas físicas — Total
+    subtema: inadimplencia
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 21005
+
+  - id: credito_prazo_concessoes_total
+    nome: Prazo médio das concessões de crédito — Total
+    subtema: prazos
+    unidade: meses
+    periodicidade: mensal
+    sgs: 20852
+    aliases: [prazo medio]
+
+  - id: credito_prazo_concessoes_pj
+    nome: Prazo médio das concessões de crédito — Pessoas jurídicas — Total
+    subtema: prazos
+    unidade: meses
+    periodicidade: mensal
+    sgs: 20853
+
+  - id: credito_prazo_concessoes_pf
+    nome: Prazo médio das concessões de crédito — Pessoas físicas — Total
+    subtema: prazos
+    unidade: meses
+    periodicidade: mensal
+    sgs: 20854
+
+  - id: credito_prazo_carteira_total
+    nome: Prazo médio da carteira de crédito — Total
+    subtema: prazos
+    unidade: meses
+    periodicidade: mensal
+    sgs: 20924
+
+  - id: credito_prazo_carteira_pj
+    nome: Prazo médio da carteira de crédito — Pessoas jurídicas — Total
+    subtema: prazos
+    unidade: meses
+    periodicidade: mensal
+    sgs: 20925
+
+  - id: credito_prazo_carteira_pf
+    nome: Prazo médio da carteira de crédito — Pessoas físicas — Total
+    subtema: prazos
+    unidade: meses
+    periodicidade: mensal
+    sgs: 20926
+
+  - id: endividamento_familias_ex_habitacional
+    nome: Endividamento das famílias com o Sistema Financeiro Nacional exceto crédito habitacional em relação à renda acumulada dos últimos 12 meses (RNDBF)
+    subtema: familias
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 29038
+    aliases: [endividamento sem imobiliario]
+
+  - id: comprometimento_renda_servico_ex_habitacional
+    nome: Comprometimento de renda das famílias com o serviço da dívida com o Sistema Financeiro Nacional exceto crédito habitacional — Com ajuste sazonal (RNDBF)
+    subtema: familias
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 29035
+
+  - id: comprometimento_renda_juros_familias
+    nome: Comprometimento de renda das famílias com juros da dívida com o Sistema Financeiro Nacional — Com ajuste sazonal (RNDBF)
+    subtema: familias
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 29033
+
+  - id: comprometimento_renda_amortizacao_familias
+    nome: Comprometimento de renda das famílias com amortização da dívida com o Sistema Financeiro Nacional — Com ajuste sazonal (RNDBF)
+    subtema: familias
+    unidade: "%"
+    periodicidade: mensal
+    sgs: 29036
+
+  - id: renda_disponivel_familias_12m
+    nome: Renda Nacional Disponível Bruta das Famílias restrita — em valores correntes, acumulada em doze meses
+    subtema: familias
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 29030
+    aliases: [rndbf, renda das familias]

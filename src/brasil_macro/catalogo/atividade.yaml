@@ -1,0 +1,408 @@
+tema: atividade
+titulo: Atividade econômica — PIB, IBC-Br, indústria, comércio e serviços
+indicadores:
+  - id: ibcbr
+    nome: IBC-Br — Índice de Atividade Econômica do Banco Central, sem ajuste sazonal
+    subtema: ibc-br
+    unidade: índice
+    periodicidade: mensal
+    sgs: 24363
+    aliases: [ibc br, previa do pib, atividade economica]
+
+  - id: ibcbr_sa
+    nome: IBC-Br — Índice de Atividade Econômica do Banco Central, com ajuste sazonal
+    subtema: ibc-br
+    unidade: índice
+    periodicidade: mensal
+    sgs: 24364
+    aliases: [ibc br dessazonalizado, previa do pib]
+    notas: Use transformacao=variacao_periodo para a variação na margem. A série é revisada a cada divulgação.
+    destaque: true
+    painel_geral: true
+
+  - id: pib_mensal
+    nome: PIB mensal — valores correntes (estimativa do Banco Central)
+    subtema: pib
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4380
+    aliases: [pib nominal mensal]
+
+  - id: pib_12m
+    nome: PIB acumulado nos últimos 12 meses — valores correntes
+    subtema: pib
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4382
+    aliases: [pib nominal, pib em reais, pib anual]
+    destaque: true
+
+  - id: pib_trimestral_bcb
+    nome: PIB trimestral — índice de volume, dados observados (via BCB)
+    subtema: pib
+    unidade: índice
+    periodicidade: trimestral
+    sgs: 22099
+    produtor: IBGE
+    aliases: [pib trimestral]
+
+  - id: pib_trimestral_sa_bcb
+    nome: PIB trimestral — índice de volume com ajuste sazonal (via BCB)
+    subtema: pib
+    unidade: índice
+    periodicidade: trimestral
+    sgs: 22109
+    produtor: IBGE
+    aliases: [pib dessazonalizado]
+    notas: Use transformacao=variacao_periodo para o crescimento contra o trimestre anterior.
+
+  - id: producao_industrial_bcb
+    nome: Produção industrial — indústria geral, índice 2022 = 100 (via BCB)
+    subtema: industria
+    unidade: índice
+    periodicidade: mensal
+    sgs: 21859
+    produtor: IBGE
+    aliases: [pim, industria, producao fisica industrial]
+
+  - id: vendas_varejo_bcb
+    nome: Volume de vendas no varejo — total Brasil, índice (via BCB)
+    subtema: comercio
+    unidade: índice
+    periodicidade: mensal
+    sgs: 1455
+    produtor: IBGE
+    aliases: [pmc, varejo, vendas no comercio]
+
+  # --- séries direto do IBGE (SIDRA): Contas Nacionais Trimestrais
+  - id: pib_var_trimestral
+    nome: PIB — variação contra o trimestre imediatamente anterior, com ajuste sazonal
+    subtema: pib
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6564, classificacoes: {11255: 90707}}
+    aliases: [crescimento do pib, pib na margem, pib trimestre contra trimestre]
+    notas: Taxa do trimestre, não anualizada. O IBGE revisa os trimestres anteriores a cada divulgação.
+    destaque: true
+    painel_geral: true
+
+  - id: pib_var_interanual
+    nome: PIB — variação contra o mesmo trimestre do ano anterior
+    subtema: pib
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6561, classificacoes: {11255: 90707}}
+    aliases: [pib interanual, pib ano contra ano]
+    destaque: true
+
+  - id: pib_acum_4_trimestres
+    nome: PIB — variação acumulada em quatro trimestres
+    subtema: pib
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6562, classificacoes: {11255: 90707}}
+    aliases: [pib 12 meses, pib acumulado, crescimento anual do pib]
+    notas: No quarto trimestre, é o crescimento do PIB do ano.
+    destaque: true
+
+  - id: pib_acum_ano
+    nome: PIB — variação acumulada ao longo do ano
+    subtema: pib
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6563, classificacoes: {11255: 90707}}
+    aliases: [pib no ano]
+
+  - id: pib_valores_correntes
+    nome: PIB trimestral — valores a preços correntes
+    subtema: pib
+    unidade: R$ milhões
+    periodicidade: trimestral
+    sidra: {tabela: 1846, variavel: 585, classificacoes: {11255: 90707}}
+    aliases: [pib nominal trimestral, pib em reais]
+    notas: Use transformacao=soma_12m para o PIB nominal acumulado em quatro trimestres.
+
+  - id: pib_indice_sa
+    nome: PIB trimestral — índice de volume com ajuste sazonal (média de 1995 = 100)
+    subtema: pib
+    unidade: índice
+    periodicidade: trimestral
+    sidra: {tabela: 1621, variavel: 584, classificacoes: {11255: 90707}}
+    aliases: [pib dessazonalizado indice, nivel do pib]
+
+  - id: pib_agropecuaria_var_trimestral
+    nome: PIB da agropecuária — variação contra o trimestre anterior, com ajuste sazonal
+    subtema: pib oferta
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6564, classificacoes: {11255: 90687}}
+    aliases: [agro, agricultura pib]
+
+  - id: pib_industria_var_trimestral
+    nome: PIB da indústria — variação contra o trimestre anterior, com ajuste sazonal
+    subtema: pib oferta
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6564, classificacoes: {11255: 90691}}
+    aliases: [industria pib]
+
+  - id: pib_servicos_var_trimestral
+    nome: PIB de serviços — variação contra o trimestre anterior, com ajuste sazonal
+    subtema: pib oferta
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6564, classificacoes: {11255: 90696}}
+    aliases: [servicos pib]
+
+  - id: pib_consumo_familias_var_trimestral
+    nome: Consumo das famílias — variação contra o trimestre anterior, com ajuste sazonal
+    subtema: pib demanda
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6564, classificacoes: {11255: 93404}}
+    aliases: [consumo das familias, demanda domestica]
+
+  - id: pib_consumo_governo_var_trimestral
+    nome: Consumo do governo — variação contra o trimestre anterior, com ajuste sazonal
+    subtema: pib demanda
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6564, classificacoes: {11255: 93405}}
+    aliases: [consumo da administracao publica, gastos do governo pib]
+
+  - id: pib_fbcf_var_trimestral
+    nome: Formação bruta de capital fixo (investimento) — variação contra o trimestre anterior, com ajuste sazonal
+    subtema: pib demanda
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6564, classificacoes: {11255: 93406}}
+    aliases: [investimento, fbcf, formacao bruta de capital fixo]
+
+  - id: pib_exportacoes_var_trimestral
+    nome: Exportações de bens e serviços (contas nacionais) — variação contra o trimestre anterior, com ajuste sazonal
+    subtema: pib demanda
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6564, classificacoes: {11255: 93407}}
+    aliases: [exportacoes pib]
+
+  - id: pib_importacoes_var_trimestral
+    nome: Importações de bens e serviços (contas nacionais) — variação contra o trimestre anterior, com ajuste sazonal
+    subtema: pib demanda
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 5932, variavel: 6564, classificacoes: {11255: 93408}}
+    aliases: [importacoes pib]
+    notas: "Outras taxas (interanual, acumulada) e setores: sidra_consulta na tabela 5932."
+
+  # --- indústria (PIM-PF)
+  - id: producao_industrial_var_mensal
+    nome: Produção industrial — variação contra o mês anterior, com ajuste sazonal (PIM-PF)
+    subtema: industria
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 8888, variavel: 11601, classificacoes: {544: 129314}}
+    aliases: [pim, industria na margem, producao fisica]
+    destaque: true
+
+  - id: producao_industrial_var_anual
+    nome: Produção industrial — variação contra o mesmo mês do ano anterior (PIM-PF)
+    subtema: industria
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 8888, variavel: 11602, classificacoes: {544: 129314}}
+    aliases: [pim interanual]
+
+  - id: producao_industrial_12m
+    nome: Produção industrial — variação acumulada em 12 meses (PIM-PF)
+    subtema: industria
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 8888, variavel: 11604, classificacoes: {544: 129314}}
+    aliases: [pim 12 meses]
+
+  - id: producao_industrial_indice_sa
+    nome: Produção industrial — índice com ajuste sazonal, 2022 = 100 (PIM-PF)
+    subtema: industria
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 8888, variavel: 12607, classificacoes: {544: 129314}}
+    aliases: [pim indice, nivel da industria]
+
+  - id: producao_industria_transformacao_var_mensal
+    nome: Indústria de transformação — variação contra o mês anterior, com ajuste sazonal (PIM-PF)
+    subtema: industria
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 8888, variavel: 11601, classificacoes: {544: 129316}}
+    aliases: [transformacao, manufatura]
+
+  - id: producao_industria_extrativa_var_mensal
+    nome: Indústria extrativa — variação contra o mês anterior, com ajuste sazonal (PIM-PF)
+    subtema: industria
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 8888, variavel: 11601, classificacoes: {544: 129315}}
+    aliases: [extrativa, mineracao e petroleo]
+
+  # --- comércio (PMC)
+  - id: vendas_varejo_var_mensal
+    nome: Vendas no varejo (volume) — variação contra o mês anterior, com ajuste sazonal (PMC)
+    subtema: comercio
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 8880, variavel: 11708, classificacoes: {11046: 56734}}
+    aliases: [pmc, varejo restrito, comercio na margem]
+    destaque: true
+
+  - id: vendas_varejo_var_anual
+    nome: Vendas no varejo (volume) — variação contra o mesmo mês do ano anterior (PMC)
+    subtema: comercio
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 8880, variavel: 11709, classificacoes: {11046: 56734}}
+    aliases: [pmc interanual]
+
+  - id: vendas_varejo_12m
+    nome: Vendas no varejo (volume) — variação acumulada em 12 meses (PMC)
+    subtema: comercio
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 8880, variavel: 11711, classificacoes: {11046: 56734}}
+    aliases: [pmc 12 meses]
+
+  - id: vendas_varejo_ampliado_var_mensal
+    nome: Vendas no varejo ampliado (volume) — variação contra o mês anterior, com ajuste sazonal (PMC)
+    subtema: comercio
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 8881, variavel: 11708, classificacoes: {11046: 56736}}
+    aliases: [varejo ampliado, veiculos e material de construcao]
+
+  - id: vendas_varejo_ampliado_var_anual
+    nome: Vendas no varejo ampliado (volume) — variação contra o mesmo mês do ano anterior (PMC)
+    subtema: comercio
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 8881, variavel: 11709, classificacoes: {11046: 56736}}
+    aliases: [varejo ampliado interanual]
+
+  # --- serviços (PMS)
+  - id: servicos_volume_var_mensal
+    nome: Volume de serviços — variação contra o mês anterior, com ajuste sazonal (PMS)
+    subtema: servicos
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 5906, variavel: 11623, classificacoes: {11046: 56726}}
+    aliases: [pms, setor de servicos na margem]
+    destaque: true
+
+  - id: servicos_volume_var_anual
+    nome: Volume de serviços — variação contra o mesmo mês do ano anterior (PMS)
+    subtema: servicos
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 5906, variavel: 11624, classificacoes: {11046: 56726}}
+    aliases: [pms interanual]
+
+  - id: servicos_volume_12m
+    nome: Volume de serviços — variação acumulada em 12 meses (PMS)
+    subtema: servicos
+    unidade: "%"
+    periodicidade: mensal
+    sidra: {tabela: 5906, variavel: 11626, classificacoes: {11046: 56726}}
+    aliases: [pms 12 meses]
+
+  # --- agricultura (LSPA)
+  - id: safra_graos_estimativa
+    nome: Safra de cereais, leguminosas e oleaginosas — estimativa da produção do ano (LSPA)
+    subtema: agropecuaria
+    unidade: toneladas
+    periodicidade: mensal
+    sidra: {tabela: 6588, variavel: 35, classificacoes: {48: 39428}}
+    aliases: [safra de graos, producao agricola, lspa]
+    notas: Cada mês traz a estimativa feita naquele mês para a safra do ano corrente; não é produção mensal.
+
+  - id: safra_soja_estimativa
+    nome: Soja — estimativa da produção do ano (LSPA)
+    subtema: agropecuaria
+    unidade: toneladas
+    periodicidade: mensal
+    sidra: {tabela: 6588, variavel: 35, classificacoes: {48: 39443}}
+    aliases: [soja, producao de soja, safra de soja]
+    notas: Mesma semântica da safra agregada. Cada mês traz a estimativa do ano corrente, não a produção mensal.
+    destaque: true
+
+  - id: safra_arroz_estimativa
+    nome: Arroz — estimativa da produção do ano (LSPA)
+    subtema: agropecuaria
+    unidade: toneladas
+    periodicidade: mensal
+    sidra: {tabela: 6588, variavel: 35, classificacoes: {48: 39432}}
+    aliases: [arroz, producao de arroz]
+    notas: Mesma semântica da safra agregada (estimativa do ano corrente).
+
+  - id: safra_trigo_estimativa
+    nome: Trigo — estimativa da produção do ano (LSPA)
+    subtema: agropecuaria
+    unidade: toneladas
+    periodicidade: mensal
+    sidra: {tabela: 6588, variavel: 35, classificacoes: {48: 39445}}
+    aliases: [trigo, producao de trigo]
+    notas: Mesma semântica da safra agregada (estimativa do ano corrente).
+
+  - id: safra_cafe_arabica_estimativa
+    nome: Café arábica — estimativa da produção do ano (LSPA)
+    subtema: agropecuaria
+    unidade: toneladas
+    periodicidade: mensal
+    sidra: {tabela: 6588, variavel: 35, classificacoes: {48: 39454}}
+    aliases: [arabica, cafe arabica, producao de cafe arabica]
+    notas: Mesma semântica da safra agregada. Cada mês traz a estimativa do ano corrente, não a produção mensal.
+    destaque: true
+
+  - id: safra_cafe_canephora_estimativa
+    nome: Café canephora (conilon e robusta) — estimativa da produção do ano (LSPA)
+    subtema: agropecuaria
+    unidade: toneladas
+    periodicidade: mensal
+    sidra: {tabela: 6588, variavel: 35, classificacoes: {48: 39455}}
+    aliases: [conilon, robusta, cafe conilon, canephora, cafe robusta]
+    notas: Mesma semântica da safra agregada. Cada mês traz a estimativa do ano corrente, não a produção mensal.
+
+  - id: safra_cana_estimativa
+    nome: Cana-de-açúcar — estimativa da produção do ano (LSPA)
+    subtema: agropecuaria
+    unidade: toneladas
+    periodicidade: mensal
+    sidra: {tabela: 6588, variavel: 35, classificacoes: {48: 39456}}
+    aliases: [cana, cana de acucar, etanol de cana]
+    notas: Mesma semântica da safra agregada (estimativa do ano corrente).
+
+  - id: safra_algodao_estimativa
+    nome: Algodão herbáceo — estimativa da produção do ano (LSPA)
+    subtema: agropecuaria
+    unidade: toneladas
+    periodicidade: mensal
+    sidra: {tabela: 6588, variavel: 35, classificacoes: {48: 39429}}
+    aliases: [algodao, pluma]
+    notas: Mesma semântica da safra agregada (estimativa do ano corrente).
+
+  - id: populacao_residente
+    nome: População residente estimada do Brasil
+    subtema: populacao
+    unidade: pessoas
+    periodicidade: anual
+    sidra: {tabela: 6579, variavel: 9324}
+    aliases: [populacao, habitantes, populacao do brasil, censo]
+    notas: Estimativa anual do IBGE, calibrada pelo Censo 2022. Para a população por UF, use ibge_localidades e sidra_consulta.
+
+  - id: confianca_consumidor
+    nome: Índice de Confiança do Consumidor
+    subtema: confianca
+    unidade: índice
+    periodicidade: mensal
+    sgs: 4393
+    produtor: Fecomercio-SP
+    oficial: false
+    aliases: [icc, confianca]

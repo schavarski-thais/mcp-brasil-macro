@@ -1,0 +1,519 @@
+tema: fiscal
+titulo: Política fiscal — resultado primário, nominal e dívida pública
+indicadores:
+  - id: resultado_primario_12m_pib
+    nome: Resultado primário do setor público consolidado — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: resultado primario
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5793
+    aliases: [primario, deficit primario, superavit primario, nfsp primario]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit."
+    destaque: true
+    painel_geral: true
+
+  - id: resultado_primario_mensal
+    nome: Resultado primário do setor público consolidado — fluxo mensal, R$ milhões (NFSP)
+    subtema: resultado primario
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4649
+    aliases: [primario mensal, nfsp primario mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Use transformacao=soma_12m para o acumulado em 12 meses."
+    destaque: true
+
+  - id: resultado_nominal_12m_pib
+    nome: Resultado nominal do setor público consolidado — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: resultado nominal
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5727
+    aliases: [nominal, deficit nominal, nfsp nominal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Inclui os juros nominais."
+    destaque: true
+
+  - id: dbgg_pib
+    nome: Dívida bruta do governo geral — % do PIB (metodologia a partir de 2008)
+    subtema: divida
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 13762
+    aliases: [divida bruta, dbgg, divida publica bruta]
+    destaque: true
+    painel_geral: true
+
+  - id: dlsp_pib
+    nome: Dívida líquida do setor público consolidado — % do PIB
+    subtema: divida
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 4513
+    aliases: [divida liquida, dlsp]
+    destaque: true
+
+  - id: dlsp_governo_federal_bc_pib
+    nome: Dívida líquida do governo federal e Banco Central — % do PIB
+    subtema: divida
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 4503
+    aliases: [divida liquida governo federal]
+
+  # --- resultado primário: setor público consolidado
+  - id: resultado_primario_12m
+    nome: Resultado primário do setor público consolidado — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: resultado primario
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5078
+    aliases: [primario 12 meses, deficit primario 12 meses, superavit primario 12 meses, nfsp primario 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit."
+    destaque: true
+
+  - id: resultado_primario_ano
+    nome: Resultado primário do setor público consolidado — acumulado no ano, R$ milhões (NFSP)
+    subtema: resultado primario
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4792
+    aliases: [primario acumulado no ano, deficit primario acumulado no ano, superavit primario acumulado no ano, nfsp primario acumulado no ano]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Zera a cada janeiro; dezembro traz o resultado do ano fechado."
+
+  # --- resultado primário: governo central
+  - id: resultado_primario_governo_central_mensal
+    nome: Resultado primário do governo central — fluxo mensal, R$ milhões (NFSP)
+    subtema: resultado primario
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4639
+    aliases: [primario governo central mensal, deficit primario governo central mensal, superavit primario governo central mensal, nfsp primario governo central mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. No SGS a esfera se chama 'Governo Federal e Banco Central'; equivale ao governo central das estatísticas fiscais do BCB (Governo Federal, INSS e Banco Central), apurado 'abaixo da linha' — difere do resultado do Tesouro Nacional (RTN), 'acima da linha'. Use transformacao=soma_12m para o acumulado em 12 meses."
+
+  - id: resultado_primario_governo_central_12m
+    nome: Resultado primário do governo central — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: resultado primario
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5068
+    aliases: [primario governo central 12 meses, deficit primario governo central 12 meses, superavit primario governo central 12 meses, nfsp primario governo central 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. No SGS a esfera se chama 'Governo Federal e Banco Central'; equivale ao governo central das estatísticas fiscais do BCB (Governo Federal, INSS e Banco Central), apurado 'abaixo da linha' — difere do resultado do Tesouro Nacional (RTN), 'acima da linha'."
+
+  - id: resultado_primario_governo_central_12m_pib
+    nome: Resultado primário do governo central — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: resultado primario
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5783
+    aliases: [primario governo central pib, deficit primario governo central pib, superavit primario governo central pib, nfsp primario governo central pib]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. No SGS a esfera se chama 'Governo Federal e Banco Central'; equivale ao governo central das estatísticas fiscais do BCB (Governo Federal, INSS e Banco Central), apurado 'abaixo da linha' — difere do resultado do Tesouro Nacional (RTN), 'acima da linha'."
+    destaque: true
+
+  # --- resultado primário: governos regionais (estados e municípios)
+  - id: resultado_primario_regionais_mensal
+    nome: Resultado primário dos governos regionais (estados e municípios) — fluxo mensal, R$ milhões (NFSP)
+    subtema: resultado primario
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4642
+    aliases: [primario estados e municipios mensal, deficit primario estados e municipios mensal, superavit primario estados e municipios mensal, nfsp primario estados e municipios mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Soma de governos estaduais e municipais. Use transformacao=soma_12m para o acumulado em 12 meses."
+
+  - id: resultado_primario_regionais_12m
+    nome: Resultado primário dos governos regionais (estados e municípios) — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: resultado primario
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5071
+    aliases: [primario estados e municipios 12 meses, deficit primario estados e municipios 12 meses, superavit primario estados e municipios 12 meses, nfsp primario estados e municipios 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Soma de governos estaduais e municipais."
+
+  - id: resultado_primario_regionais_12m_pib
+    nome: Resultado primário dos governos regionais (estados e municípios) — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: resultado primario
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5786
+    aliases: [primario estados e municipios pib, deficit primario estados e municipios pib, superavit primario estados e municipios pib, nfsp primario estados e municipios pib]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Soma de governos estaduais e municipais."
+    destaque: true
+
+  # --- resultado primário: empresas estatais
+  - id: resultado_primario_estatais_mensal
+    nome: Resultado primário das empresas estatais — fluxo mensal, R$ milhões (NFSP)
+    subtema: resultado primario
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4645
+    aliases: [primario estatais mensal, deficit primario estatais mensal, superavit primario estatais mensal, nfsp primario estatais mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Estatais federais, estaduais e municipais; Petrobras, Eletrobras e bancos públicos não entram nas estatísticas fiscais. Use transformacao=soma_12m para o acumulado em 12 meses."
+
+  - id: resultado_primario_estatais_12m
+    nome: Resultado primário das empresas estatais — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: resultado primario
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5074
+    aliases: [primario estatais 12 meses, deficit primario estatais 12 meses, superavit primario estatais 12 meses, nfsp primario estatais 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Estatais federais, estaduais e municipais; Petrobras, Eletrobras e bancos públicos não entram nas estatísticas fiscais."
+
+  - id: resultado_primario_estatais_12m_pib
+    nome: Resultado primário das empresas estatais — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: resultado primario
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5789
+    aliases: [primario estatais pib, deficit primario estatais pib, superavit primario estatais pib, nfsp primario estatais pib]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Estatais federais, estaduais e municipais; Petrobras, Eletrobras e bancos públicos não entram nas estatísticas fiscais."
+
+  # --- juros nominais: setor público consolidado
+  - id: juros_nominais_mensal
+    nome: Juros nominais do setor público consolidado — fluxo mensal, R$ milhões (NFSP)
+    subtema: juros nominais
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4616
+    aliases: [juros nominais mensal, despesa com juros mensal, conta de juros mensal, nfsp nominais mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros. Use transformacao=soma_12m para o acumulado em 12 meses."
+
+  - id: juros_nominais_12m
+    nome: Juros nominais do setor público consolidado — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: juros nominais
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5045
+    aliases: [juros nominais 12 meses, despesa com juros 12 meses, conta de juros 12 meses, nfsp nominais 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros."
+
+  - id: juros_nominais_12m_pib
+    nome: Juros nominais do setor público consolidado — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: juros nominais
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5760
+    aliases: [juros nominais pib, despesa com juros pib, conta de juros pib, nfsp nominais pib]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros."
+    destaque: true
+
+  - id: juros_nominais_ano
+    nome: Juros nominais do setor público consolidado — acumulado no ano, R$ milhões (NFSP)
+    subtema: juros nominais
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4759
+    aliases: [juros nominais acumulado no ano, despesa com juros acumulado no ano, conta de juros acumulado no ano, nfsp nominais acumulado no ano]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros. Zera a cada janeiro; dezembro traz o resultado do ano fechado."
+
+  # --- juros nominais: governo central
+  - id: juros_nominais_governo_central_mensal
+    nome: Juros nominais do governo central — fluxo mensal, R$ milhões (NFSP)
+    subtema: juros nominais
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4606
+    aliases: [juros nominais governo central mensal, despesa com juros governo central mensal, conta de juros governo central mensal, nfsp nominais governo central mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros. No SGS a esfera se chama 'Governo Federal e Banco Central'; equivale ao governo central das estatísticas fiscais do BCB (Governo Federal, INSS e Banco Central), apurado 'abaixo da linha' — difere do resultado do Tesouro Nacional (RTN), 'acima da linha'. Use transformacao=soma_12m para o acumulado em 12 meses."
+
+  - id: juros_nominais_governo_central_12m
+    nome: Juros nominais do governo central — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: juros nominais
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5035
+    aliases: [juros nominais governo central 12 meses, despesa com juros governo central 12 meses, conta de juros governo central 12 meses, nfsp nominais governo central 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros. No SGS a esfera se chama 'Governo Federal e Banco Central'; equivale ao governo central das estatísticas fiscais do BCB (Governo Federal, INSS e Banco Central), apurado 'abaixo da linha' — difere do resultado do Tesouro Nacional (RTN), 'acima da linha'."
+
+  - id: juros_nominais_governo_central_12m_pib
+    nome: Juros nominais do governo central — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: juros nominais
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5750
+    aliases: [juros nominais governo central pib, despesa com juros governo central pib, conta de juros governo central pib, nfsp nominais governo central pib]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros. No SGS a esfera se chama 'Governo Federal e Banco Central'; equivale ao governo central das estatísticas fiscais do BCB (Governo Federal, INSS e Banco Central), apurado 'abaixo da linha' — difere do resultado do Tesouro Nacional (RTN), 'acima da linha'."
+
+  # --- juros nominais: governos regionais (estados e municípios)
+  - id: juros_nominais_regionais_mensal
+    nome: Juros nominais dos governos regionais (estados e municípios) — fluxo mensal, R$ milhões (NFSP)
+    subtema: juros nominais
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4609
+    aliases: [juros nominais estados e municipios mensal, despesa com juros estados e municipios mensal, conta de juros estados e municipios mensal, nfsp nominais estados e municipios mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros. Soma de governos estaduais e municipais. Use transformacao=soma_12m para o acumulado em 12 meses."
+
+  - id: juros_nominais_regionais_12m
+    nome: Juros nominais dos governos regionais (estados e municípios) — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: juros nominais
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5038
+    aliases: [juros nominais estados e municipios 12 meses, despesa com juros estados e municipios 12 meses, conta de juros estados e municipios 12 meses, nfsp nominais estados e municipios 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros. Soma de governos estaduais e municipais."
+
+  - id: juros_nominais_regionais_12m_pib
+    nome: Juros nominais dos governos regionais (estados e municípios) — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: juros nominais
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5753
+    aliases: [juros nominais estados e municipios pib, despesa com juros estados e municipios pib, conta de juros estados e municipios pib, nfsp nominais estados e municipios pib]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros. Soma de governos estaduais e municipais."
+
+  # --- juros nominais: empresas estatais
+  - id: juros_nominais_estatais_mensal
+    nome: Juros nominais das empresas estatais — fluxo mensal, R$ milhões (NFSP)
+    subtema: juros nominais
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4612
+    aliases: [juros nominais estatais mensal, despesa com juros estatais mensal, conta de juros estatais mensal, nfsp nominais estatais mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros. Estatais federais, estaduais e municipais; Petrobras, Eletrobras e bancos públicos não entram nas estatísticas fiscais. Use transformacao=soma_12m para o acumulado em 12 meses."
+
+  - id: juros_nominais_estatais_12m
+    nome: Juros nominais das empresas estatais — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: juros nominais
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5041
+    aliases: [juros nominais estatais 12 meses, despesa com juros estatais 12 meses, conta de juros estatais 12 meses, nfsp nominais estatais 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros. Estatais federais, estaduais e municipais; Petrobras, Eletrobras e bancos públicos não entram nas estatísticas fiscais."
+
+  - id: juros_nominais_estatais_12m_pib
+    nome: Juros nominais das empresas estatais — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: juros nominais
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5756
+    aliases: [juros nominais estatais pib, despesa com juros estatais pib, conta de juros estatais pib, nfsp nominais estatais pib]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Juros apropriados por competência; valor positivo = despesa líquida com juros. Estatais federais, estaduais e municipais; Petrobras, Eletrobras e bancos públicos não entram nas estatísticas fiscais."
+
+  # --- resultado nominal: setor público consolidado
+  - id: resultado_nominal_mensal
+    nome: Resultado nominal do setor público consolidado — fluxo mensal, R$ milhões (NFSP)
+    subtema: resultado nominal
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4583
+    aliases: [nominal mensal, deficit nominal mensal, nfsp nominal mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais. Use transformacao=soma_12m para o acumulado em 12 meses."
+
+  - id: resultado_nominal_12m
+    nome: Resultado nominal do setor público consolidado — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: resultado nominal
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5012
+    aliases: [nominal 12 meses, deficit nominal 12 meses, nfsp nominal 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais."
+
+  - id: resultado_nominal_ano
+    nome: Resultado nominal do setor público consolidado — acumulado no ano, R$ milhões (NFSP)
+    subtema: resultado nominal
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4726
+    aliases: [nominal acumulado no ano, deficit nominal acumulado no ano, nfsp nominal acumulado no ano]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais. Zera a cada janeiro; dezembro traz o resultado do ano fechado."
+
+  # --- resultado nominal: governo central
+  - id: resultado_nominal_governo_central_mensal
+    nome: Resultado nominal do governo central — fluxo mensal, R$ milhões (NFSP)
+    subtema: resultado nominal
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4573
+    aliases: [nominal governo central mensal, deficit nominal governo central mensal, nfsp nominal governo central mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais. No SGS a esfera se chama 'Governo Federal e Banco Central'; equivale ao governo central das estatísticas fiscais do BCB (Governo Federal, INSS e Banco Central), apurado 'abaixo da linha' — difere do resultado do Tesouro Nacional (RTN), 'acima da linha'. Use transformacao=soma_12m para o acumulado em 12 meses."
+
+  - id: resultado_nominal_governo_central_12m
+    nome: Resultado nominal do governo central — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: resultado nominal
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5002
+    aliases: [nominal governo central 12 meses, deficit nominal governo central 12 meses, nfsp nominal governo central 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais. No SGS a esfera se chama 'Governo Federal e Banco Central'; equivale ao governo central das estatísticas fiscais do BCB (Governo Federal, INSS e Banco Central), apurado 'abaixo da linha' — difere do resultado do Tesouro Nacional (RTN), 'acima da linha'."
+
+  - id: resultado_nominal_governo_central_12m_pib
+    nome: Resultado nominal do governo central — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: resultado nominal
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5717
+    aliases: [nominal governo central pib, deficit nominal governo central pib, nfsp nominal governo central pib]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais. No SGS a esfera se chama 'Governo Federal e Banco Central'; equivale ao governo central das estatísticas fiscais do BCB (Governo Federal, INSS e Banco Central), apurado 'abaixo da linha' — difere do resultado do Tesouro Nacional (RTN), 'acima da linha'."
+
+  # --- resultado nominal: governos regionais (estados e municípios)
+  - id: resultado_nominal_regionais_mensal
+    nome: Resultado nominal dos governos regionais (estados e municípios) — fluxo mensal, R$ milhões (NFSP)
+    subtema: resultado nominal
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4576
+    aliases: [nominal estados e municipios mensal, deficit nominal estados e municipios mensal, nfsp nominal estados e municipios mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais. Soma de governos estaduais e municipais. Use transformacao=soma_12m para o acumulado em 12 meses."
+
+  - id: resultado_nominal_regionais_12m
+    nome: Resultado nominal dos governos regionais (estados e municípios) — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: resultado nominal
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5005
+    aliases: [nominal estados e municipios 12 meses, deficit nominal estados e municipios 12 meses, nfsp nominal estados e municipios 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais. Soma de governos estaduais e municipais."
+
+  - id: resultado_nominal_regionais_12m_pib
+    nome: Resultado nominal dos governos regionais (estados e municípios) — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: resultado nominal
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5720
+    aliases: [nominal estados e municipios pib, deficit nominal estados e municipios pib, nfsp nominal estados e municipios pib]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais. Soma de governos estaduais e municipais."
+
+  # --- resultado nominal: empresas estatais
+  - id: resultado_nominal_estatais_mensal
+    nome: Resultado nominal das empresas estatais — fluxo mensal, R$ milhões (NFSP)
+    subtema: resultado nominal
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4579
+    aliases: [nominal estatais mensal, deficit nominal estatais mensal, nfsp nominal estatais mensal]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais. Estatais federais, estaduais e municipais; Petrobras, Eletrobras e bancos públicos não entram nas estatísticas fiscais. Use transformacao=soma_12m para o acumulado em 12 meses."
+
+  - id: resultado_nominal_estatais_12m
+    nome: Resultado nominal das empresas estatais — acumulado em 12 meses, R$ milhões (NFSP)
+    subtema: resultado nominal
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 5008
+    aliases: [nominal estatais 12 meses, deficit nominal estatais 12 meses, nfsp nominal estatais 12 meses]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais. Estatais federais, estaduais e municipais; Petrobras, Eletrobras e bancos públicos não entram nas estatísticas fiscais."
+
+  - id: resultado_nominal_estatais_12m_pib
+    nome: Resultado nominal das empresas estatais — acumulado em 12 meses, % do PIB (NFSP)
+    subtema: resultado nominal
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 5723
+    aliases: [nominal estatais pib, deficit nominal estatais pib, nfsp nominal estatais pib]
+    notas: "Convenção NFSP: valor positivo = déficit; valor negativo = superávit. Resultado nominal = resultado primário + juros nominais. Estatais federais, estaduais e municipais; Petrobras, Eletrobras e bancos públicos não entram nas estatísticas fiscais."
+
+  # --- dívida líquida e bruta: saldos em R$ e aberturas
+  - id: dlsp
+    nome: Dívida líquida do setor público consolidado — saldo, R$ milhões
+    subtema: divida
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4478
+    aliases: [divida liquida em reais, dlsp em reais, dlsp saldo]
+
+  - id: dlsp_interna_pib
+    nome: Dívida líquida do setor público consolidado — dívida interna líquida, % do PIB
+    subtema: divida
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 4524
+    aliases: [divida interna liquida, dlsp interna]
+
+  - id: dlsp_externa_pib
+    nome: Dívida líquida do setor público consolidado — dívida externa líquida, % do PIB
+    subtema: divida
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 4535
+    aliases: [divida externa liquida do setor publico, dlsp externa]
+    notas: Valor negativo = o setor público é credor externo líquido (as reservas internacionais superam a dívida externa pública).
+
+  - id: dlsp_governo_central
+    nome: Dívida líquida do governo central (Governo Federal e Banco Central) — saldo, R$ milhões
+    subtema: divida
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4468
+    aliases: [divida liquida governo central, divida liquida governo federal em reais]
+
+  - id: dlsp_regionais
+    nome: Dívida líquida dos governos regionais (estados e municípios) — saldo, R$ milhões
+    subtema: divida
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4471
+    aliases: [divida liquida estados e municipios, divida dos estados, divida dos municipios]
+
+  - id: dlsp_regionais_pib
+    nome: Dívida líquida dos governos regionais (estados e municípios) — % do PIB
+    subtema: divida
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 4506
+    aliases: [divida liquida estados e municipios pib, divida dos estados pib]
+
+  - id: dlsp_estatais
+    nome: Dívida líquida das empresas estatais — saldo, R$ milhões
+    subtema: divida
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4474
+    aliases: [divida liquida estatais, divida das estatais]
+    notas: Estatais federais, estaduais e municipais; Petrobras, Eletrobras e bancos públicos não entram nas estatísticas fiscais.
+
+  - id: dlsp_estatais_pib
+    nome: Dívida líquida das empresas estatais — % do PIB
+    subtema: divida
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 4509
+    aliases: [divida liquida estatais pib]
+    notas: Estatais federais, estaduais e municipais; Petrobras, Eletrobras e bancos públicos não entram nas estatísticas fiscais.
+
+  - id: dbgg
+    nome: Dívida bruta do governo geral — saldo, R$ milhões (metodologia a partir de 2008)
+    subtema: divida
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 13761
+    aliases: [divida bruta em reais, dbgg em reais, dbgg saldo, divida publica bruta em reais]
+    notas: Governo geral = Governo Federal, INSS e governos estaduais e municipais; não inclui Banco Central nem estatais.
+
+  - id: dbgg_pib_metodologia_antiga
+    nome: Dívida bruta do governo geral — % do PIB (metodologia utilizada até 2007)
+    subtema: divida
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 4537
+    aliases: [divida bruta metodologia antiga, divida bruta conceito fmi, dbgg ate 2007]
+    notas: Série ainda atualizada. Inclui todos os títulos do Tesouro na carteira do Banco Central, e por isso fica acima da DBGG oficial (dbgg_pib), que considera as operações compromissadas do BCB.
+
+  - id: dlgg
+    nome: Dívida líquida do governo geral — saldo, R$ milhões
+    subtema: divida
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4501
+    aliases: [divida liquida governo geral em reais, dlgg em reais]
+
+  - id: dlgg_pib
+    nome: Dívida líquida do governo geral — % do PIB
+    subtema: divida
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 4536
+    aliases: [divida liquida governo geral, dlgg]
+
+  - id: divida_mobiliaria_mercado
+    nome: Dívida mobiliária federal — títulos do Tesouro Nacional em mercado, saldo (posição em carteira)
+    subtema: divida
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4154
+    aliases: [divida mobiliaria, titulos publicos em mercado, dpmfi em mercado, titulos do tesouro em mercado]
+    notas: Total emitido menos a carteira do Banco Central. Estatística do BCB; o estoque oficial da Dívida Pública Federal é o do Tesouro Nacional. O SGS não traz série própria dos componentes da DBGG.
+
+  - id: titulos_tesouro_carteira_bcb
+    nome: Dívida mobiliária federal — títulos do Tesouro Nacional na carteira do Banco Central, saldo
+    subtema: divida
+    unidade: R$ milhões
+    periodicidade: mensal
+    sgs: 4152
+    aliases: [carteira de titulos do banco central, titulos do tesouro no bc]

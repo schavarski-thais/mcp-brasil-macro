@@ -1,0 +1,29 @@
+tema: trabalho
+titulo: Trabalho — complementos do IBGE (desalento e subutilização)
+indicadores:
+  - id: desalento
+    nome: Desalento — pessoas desalentadas sobre a força de trabalho ampliada (PNAD Contínua, trimestre móvel)
+    subtema: desocupacao
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 6807, variavel: 9869}
+    aliases: [desalentados, desalento, pessoas desalentadas, desistiram de procurar emprego]
+    notas: Trimestre móvel, com o período no fim do trimestre. Desalentado é quem desistiu de procurar trabalho por achar que não encontraria.
+
+  - id: subutilizacao_insuficiencia_horas
+    nome: Taxa combinada de desocupação e subocupação por insuficiência de horas (PNAD Contínua)
+    subtema: desocupacao
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 4099, variavel: 4114}
+    aliases: [subocupacao, subutilizacao, subocupados por insuficiencia de horas, taxa de subocupacao]
+    notas: Soma os desocupados e os subocupados por insuficiência de horas sobre a força de trabalho ampliada.
+
+  - id: subutilizacao_forca_potencial
+    nome: Taxa combinada de desocupação e força de trabalho potencial (PNAD Contínua)
+    subtema: desocupacao
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 4099, variavel: 4116}
+    aliases: [forca de trabalho potencial, subutilizacao ampliada, subutilizacao total]
+    notas: Inclui também quem está fora da força de trabalho mas gostaria de trabalhar e não procurou ou não pôde começar.

@@ -1,0 +1,47 @@
+tema: comercio_exterior
+titulo: Comércio exterior — exportações, importações e saldo comercial (MDIC/Secex)
+indicadores:
+  - id: exportacoes
+    nome: Exportações brasileiras — valor FOB mensal (MDIC/Secex)
+    subtema: balanca comercial
+    unidade: US$ milhões
+    periodicidade: mensal
+    comex: exportacoes
+    produtor: MDIC/Secex
+    aliases: [exportacoes brasileiras, exportacao, exports, vendas externas, exportacoes totais]
+    notas: "Valor FOB (US$ milhões) dos registros de exportação do Siscomex, conforme o ComexStat. Os meses recentes são revisados nas divulgações seguintes. Para o ranking por país, estado ou produto use a ferramenta comercio_exterior. Se a API do ComexStat estiver indisponível, a série vem do Ipeadata (SECEX12_XVTOT12), com defasagem de semanas."
+    destaque: true
+    painel_geral: true
+
+  - id: importacoes
+    nome: Importações brasileiras — valor FOB mensal (MDIC/Secex)
+    subtema: balanca comercial
+    unidade: US$ milhões
+    periodicidade: mensal
+    comex: importacoes
+    produtor: MDIC/Secex
+    aliases: [importacoes brasileiras, importacao, imports, compras externas, importacoes totais]
+    notas: "Valor FOB (US$ milhões) dos registros de importação do Siscomex, conforme o ComexStat. Os meses recentes são revisados nas divulgações seguintes. Se a API do ComexStat estiver indisponível, a série vem do Ipeadata (SECEX12_MVTOT12)."
+    destaque: true
+
+  - id: saldo_comercial
+    nome: Saldo comercial (MDIC/Secex) — exportações menos importações, mensal
+    subtema: balanca comercial
+    unidade: US$ milhões
+    periodicidade: mensal
+    comex: saldo
+    produtor: MDIC/Secex
+    aliases: [balanca comercial, saldo da balanca comercial, superavit comercial, superavit primario externo, trade balance, resultado comercial]
+    notas: "Exportações menos importações FOB pelo conceito do MDIC/Secex, que não coincide com o saldo da balança comercial do balanço de pagamentos do BCB. Use transformacao=soma_12m para o acumulado em 12 meses."
+    destaque: true
+    painel_geral: true
+
+  - id: corrente_comercio
+    nome: Corrente de comércio (MDIC/Secex) — exportações mais importações, mensal
+    subtema: balanca comercial
+    unidade: US$ milhões
+    periodicidade: mensal
+    comex: corrente
+    produtor: MDIC/Secex
+    aliases: [corrente de comercio, fluxo de comercio, abertura comercial]
+    notas: "Soma de exportações e importações FOB pelo conceito do MDIC/Secex. Use transformacao=soma_12m para o acumulado em 12 meses."

@@ -1,0 +1,84 @@
+tema: atividade
+titulo: Atividade econômica — PIB, IBC-Br, indústria, comércio e serviços
+indicadores:
+  - id: pib_mensal_usd
+    nome: PIB mensal em US$
+    subtema: pib
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 4385
+    aliases: [pib em dolar, pib usd]
+    notas: PIB convertido para dólar pelo câmbio médio do período; oscila com o câmbio além do volume da economia.
+
+  - id: pib_acumulado_ano_usd
+    nome: PIB acumulado no ano em US$
+    subtema: pib
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 4386
+    aliases: [pib acumulado dolar]
+
+  - id: pib_anual_usd
+    nome: PIB anual em US$
+    subtema: pib
+    unidade: US$ milhões
+    periodicidade: anual
+    sgs: 7324
+    aliases: [pib anual dolar, pib anual em dolares]
+
+  - id: ibcbr_agropecuaria_sem_ajuste
+    nome: IBC-Br — agropecuária, sem ajuste sazonal
+    subtema: ibc-br
+    unidade: índice
+    periodicidade: mensal
+    sgs: 29601
+    aliases: [ibc agro, ibc-br agropecuaria]
+
+  - id: ibcbr_agropecuaria_sa
+    nome: IBC-Br — agropecuária, com ajuste sazonal
+    subtema: ibc-br
+    unidade: índice
+    periodicidade: mensal
+    sgs: 29602
+    aliases: [ibc agro dessazonalizado]
+
+  - id: ibcbr_industria_sem_ajuste
+    nome: IBC-Br — indústria, sem ajuste sazonal
+    subtema: ibc-br
+    unidade: índice
+    periodicidade: mensal
+    sgs: 29603
+    aliases: [ibc industria]
+
+  - id: ibcbr_industria_sa
+    nome: IBC-Br — indústria, com ajuste sazonal
+    subtema: ibc-br
+    unidade: índice
+    periodicidade: mensal
+    sgs: 29604
+    aliases: [ibc industria dessazonalizado]
+
+  - id: ibcbr_servicos_sem_ajuste
+    nome: IBC-Br — serviços, sem ajuste sazonal
+    subtema: ibc-br
+    unidade: índice
+    periodicidade: mensal
+    sgs: 29605
+    aliases: [ibc servicos]
+
+  - id: ibcbr_servicos_sa
+    nome: IBC-Br — serviços, com ajuste sazonal
+    subtema: ibc-br
+    unidade: índice
+    periodicidade: mensal
+    sgs: 29606
+    aliases: [ibc servicos dessazonalizado]
+
+  - id: pessoal_ocupado_total
+    nome: Pessoal ocupado total (indústria)
+    subtema: trabalho
+    unidade: milhões de pessoas
+    periodicidade: mensal
+    sgs: 28785
+    aliases: [pessoal ocupado, empregados industria]
+    notas: Pesquisa industrial mensal do IBGE, divulgada pelo BCB; unidade em milhões, conforme a série.

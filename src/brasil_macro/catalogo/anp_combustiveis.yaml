@@ -1,0 +1,64 @@
+tema: combustiveis
+titulo: Combustíveis — preços médios ao consumidor nos postos (ANP)
+indicadores:
+  - id: gasolina_preco_medio_nacional
+    nome: Gasolina comum — preço médio nos postos (média nacional, mensal)
+    subtema: precos_postos
+    unidade: R$ / litro
+    periodicidade: mensal
+    anp: gasolina
+    produtor: ANP
+    aliases: [preco gasolina, gasolina no posto, preco medio gasolina, gasolina]
+    notas: "Média simples das coletas semanais de todos os postos pesquisados pela ANP no mês. Não pondera pelo volume vendido. Para um estado ou município, use a ferramenta combustiveis_precos."
+    destaque: true
+
+  - id: etanol_preco_medio_nacional
+    nome: Etanol hidratado — preço médio nos postos (média nacional, mensal)
+    subtema: precos_postos
+    unidade: R$ / litro
+    periodicidade: mensal
+    anp: etanol
+    produtor: ANP
+    aliases: [preco etanol, etanol no posto, alcool]
+    notas: "Média simples das coletas semanais de todos os postos pesquisados pela ANP no mês. Não pondera pelo volume vendido."
+
+  - id: diesel_preco_medio_nacional
+    nome: Diesel S500 — preço médio nos postos (média nacional, mensal)
+    subtema: precos_postos
+    unidade: R$ / litro
+    periodicidade: mensal
+    anp: diesel
+    produtor: ANP
+    aliases: [preco diesel, diesel no posto, diesel s500]
+    notas: "Média simples das coletas semanais de todos os postos pesquisados pela ANP no mês. Não pondera pelo volume vendido."
+    destaque: true
+
+  - id: diesel_s10_preco_medio_nacional
+    nome: Diesel S10 — preço médio nos postos (média nacional, mensal)
+    subtema: precos_postos
+    unidade: R$ / litro
+    periodicidade: mensal
+    anp: diesel_s10
+    produtor: ANP
+    aliases: [diesel s10, preco diesel s10]
+    notas: "Média simples das coletas semanais de todos os postos pesquisados pela ANP no mês. Não pondera pelo volume vendido."
+
+  - id: gnv_preco_medio_nacional
+    nome: GNV — preço médio nos postos (média nacional, mensal)
+    subtema: precos_postos
+    unidade: R$ / m³
+    periodicidade: mensal
+    anp: gnv
+    produtor: ANP
+    aliases: [preco gnv, gnv no posto, gas natural veicular]
+    notas: "Média simples das coletas dos postos de GNV no mês. Não pondera pelo volume vendido."
+
+  - id: glp_preco_medio_nacional
+    nome: GLP (botijão de 13 kg) — preço médio nos postos (média nacional, mensal)
+    subtema: precos_postos
+    unidade: R$ / 13 kg
+    periodicidade: mensal
+    anp: glp
+    produtor: ANP
+    aliases: [preco gas de cozinha, botijao de gas, glp, gas de cozinha]
+    notas: "Média simples das coletas de revendas de GLP no mês. Não pondera pelo volume vendido."

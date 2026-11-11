@@ -1,0 +1,130 @@
+tema: atividade
+titulo: Atividade econômica — complementos do IBGE (PIB anual, investimento, PIM por uso, PMC e PMS por atividade)
+indicadores:
+  # --- Contas Nacionais: taxas trimestrais
+  - id: taxa_investimento
+    nome: Taxa de investimento (formação bruta de capital fixo em % do PIB)
+    subtema: pib
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 6727, variavel: 2517}
+    aliases: [investimento, fbcf, formacao bruta de capital fixo, taxa de investimento]
+    notas: Série de nível, em % do PIB, do trimestre; não é a variação do investimento.
+
+  - id: taxa_poupanca
+    nome: Taxa de poupança (em % do PIB)
+    subtema: pib
+    unidade: "%"
+    periodicidade: trimestral
+    sidra: {tabela: 6726, variavel: 9774}
+    aliases: [poupanca, taxa de poupanca, poupanca nacional]
+
+  # --- Contas Nacionais: anual, com PIB per capita
+  - id: pib_anual_correntes
+    nome: PIB anual a preços correntes
+    subtema: pib
+    unidade: R$ milhões
+    periodicidade: anual
+    sidra: {tabela: 6784, variavel: 9808}
+    aliases: [pib anual, pib do ano, pib nominal anual, pib em reais anual]
+    notas: Último ano divulgado pelo IBGE na tabela 6784. Para o PIB em dólares, use a série de câmbio.
+
+  - id: pib_anual_volume
+    nome: PIB anual — variação em volume (real)
+    subtema: pib
+    unidade: "%"
+    periodicidade: anual
+    sidra: {tabela: 6784, variavel: 9810}
+    aliases: [crescimento anual do pib, pib anual real, pib real anual]
+
+  - id: pib_per_capita_anual
+    nome: PIB per capita anual a preços correntes
+    subtema: pib
+    unidade: R$
+    periodicidade: anual
+    sidra: {tabela: 6784, variavel: 9812}
+    aliases: [pib per capita, renda per capita, pib por habitante]
+
+  # --- PIM por categoria de uso (índice com ajuste sazonal, base 2022 = 100)
+  - id: pim_bens_capital_sa
+    nome: Produção industrial — bens de capital, com ajuste sazonal (base 2022 = 100)
+    subtema: industria
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 8887, variavel: 12607, classificacoes: {543: 129278}}
+    aliases: [pim bens de capital, producao de bens de capital, investimento industrial]
+
+  - id: pim_bens_intermediarios_sa
+    nome: Produção industrial — bens intermediários, com ajuste sazonal (base 2022 = 100)
+    subtema: industria
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 8887, variavel: 12607, classificacoes: {543: 129283}}
+    aliases: [pim bens intermediarios, producao de bens intermediarios]
+
+  - id: pim_bens_consumo_sa
+    nome: Produção industrial — bens de consumo, com ajuste sazonal (base 2022 = 100)
+    subtema: industria
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 8887, variavel: 12607, classificacoes: {543: 129300}}
+    aliases: [pim bens de consumo, producao de bens de consumo]
+
+  - id: pim_bens_consumo_duraveis_sa
+    nome: Produção industrial — bens de consumo duráveis, com ajuste sazonal (base 2022 = 100)
+    subtema: industria
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 8887, variavel: 12607, classificacoes: {543: 129301}}
+    aliases: [pim duraveis, bens duraveis, producao de duraveis]
+    notas: Inclui automóveis para passageiros.
+
+  - id: pim_bens_semi_nao_duraveis_sa
+    nome: Produção industrial — bens de consumo semiduráveis e não duráveis, com ajuste sazonal (base 2022 = 100)
+    subtema: industria
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 8887, variavel: 12607, classificacoes: {543: 129305}}
+    aliases: [pim nao duraveis, bens nao duraveis, pim semiduraveis, producao de nao duraveis]
+    notas: Agregado das categorias 321 e 322 da classificação de uso; a subcategoria não duráveis isolada não tem série publicada.
+
+  - id: pmc_combustiveis_sa
+    nome: Vendas no varejo — combustíveis e lubrificantes, volume com ajuste sazonal (base 2022 = 100)
+    subtema: comercio
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 8882, variavel: 7170, classificacoes: {11046: 56734, 85: 90671}}
+    aliases: [vendas de combustiveis, pmc combustiveis]
+
+  - id: pmc_supermercados_sa
+    nome: Vendas no varejo — hipermercados e supermercados, volume com ajuste sazonal (base 2022 = 100)
+    subtema: comercio
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 8882, variavel: 7170, classificacoes: {11046: 56734, 85: 90672}}
+    aliases: [vendas de supermercados, supermercados, pmc supermercados]
+
+  - id: pmc_tecidos_sa
+    nome: Vendas no varejo — tecidos, vestuário e calçados, volume com ajuste sazonal (base 2022 = 100)
+    subtema: comercio
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 8882, variavel: 7170, classificacoes: {11046: 56734, 85: 90673}}
+    aliases: [vendas de vestuario, vestuario, pmc vestuario]
+
+  - id: pmc_moveis_eletro_sa
+    nome: Vendas no varejo — móveis e eletrodomésticos, volume com ajuste sazonal (base 2022 = 100)
+    subtema: comercio
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 8882, variavel: 7170, classificacoes: {11046: 56734, 85: 2759}}
+    aliases: [vendas de moveis, eletrodomesticos, pmc moveis]
+
+  - id: pmc_farmaceuticos_sa
+    nome: Vendas no varejo — artigos farmacêuticos, médicos, de perfumaria e cosméticos, volume com ajuste sazonal (base 2022 = 100)
+    subtema: comercio
+    unidade: índice
+    periodicidade: mensal
+    sidra: {tabela: 8882, variavel: 7170, classificacoes: {11046: 56734, 85: 103155}}
+    aliases: [vendas de farmacia, farmaceuticos, pmc farmacia]
+

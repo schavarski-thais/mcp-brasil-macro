@@ -1,0 +1,80 @@
+tema: inflacao
+titulo: Inflação — IPCA, núcleos, aberturas e outros índices de preços
+indicadores:
+  - id: ipca_e_mensal
+    nome: IPCA-E — variação mensal
+    subtema: indices
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 10764
+    aliases: [ipca-e, ipca e mensal]
+    notas: IPCA-E é o IPCA do período de cálculo de índices trabalhistas e de precatórios; é produzido pelo IBGE.
+
+  - id: ipc_di_mensal
+    nome: IPC-DI (FGV) — variação mensal
+    subtema: indices
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 191
+    produtor: FGV
+    oficial: false
+    aliases: [ipc di, ipc fgv]
+
+  - id: ipc_fipe_mensal
+    nome: IPC-Fipe — variação mensal
+    subtema: indices
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 193
+    produtor: Fipe
+    oficial: false
+    aliases: [ipc fipe]
+
+  - id: ipa_di_mensal
+    nome: IPA-DI (FGV) — variação mensal
+    subtema: indices
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 225
+    produtor: FGV
+    oficial: false
+    aliases: [ipa di]
+
+  - id: igp10_mensal
+    nome: IGP-10 (FGV) — variação mensal
+    subtema: indices
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 7447
+    produtor: FGV
+    oficial: false
+    aliases: [igp 10, igp-10]
+
+  - id: ipa_m_mensal
+    nome: IPA-M (FGV) — variação mensal
+    subtema: indices
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 7450
+    produtor: FGV
+    oficial: false
+    aliases: [ipa m]
+
+  - id: ipa_di_produtos_industriais
+    nome: IPA-DI (FGV) — produtos industriais
+    subtema: indices
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 7459
+    produtor: FGV
+    oficial: false
+
+  - id: ipa_di_produtos_agricolas
+    nome: IPA-DI (FGV) — produtos agrícolas
+    subtema: indices
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 7460
+    produtor: FGV
+    oficial: false
+

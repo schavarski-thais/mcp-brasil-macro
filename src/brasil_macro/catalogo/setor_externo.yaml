@@ -1,0 +1,389 @@
+tema: setor_externo
+titulo: Setor externo — câmbio, reservas e balanço de pagamentos
+indicadores:
+  - id: cambio_dolar
+    nome: Taxa de câmbio — dólar americano (PTAX venda), diária
+    subtema: cambio
+    unidade: R$/US$
+    periodicidade: diaria
+    sgs: 1
+    aliases: [dolar, ptax, cambio, usd brl, dolar venda]
+    destaque: true
+    painel_geral: true
+
+  - id: cambio_dolar_compra
+    nome: Taxa de câmbio — dólar americano (PTAX compra), diária
+    subtema: cambio
+    unidade: R$/US$
+    periodicidade: diaria
+    sgs: 10813
+    aliases: [dolar compra]
+
+  - id: cambio_euro
+    nome: Taxa de câmbio — euro (PTAX venda), diária
+    subtema: cambio
+    unidade: R$/EUR
+    periodicidade: diaria
+    sgs: 21619
+    aliases: [euro, eur brl]
+
+  - id: cambio_dolar_fim_mes
+    nome: Taxa de câmbio — dólar americano (venda), fim de período mensal
+    subtema: cambio
+    unidade: R$/US$
+    periodicidade: mensal
+    sgs: 3696
+    aliases: [dolar fim de mes]
+
+  - id: cambio_dolar_media_mes
+    nome: Taxa de câmbio — dólar americano (venda), média mensal
+    subtema: cambio
+    unidade: R$/US$
+    periodicidade: mensal
+    sgs: 3698
+    aliases: [dolar medio, dolar media mensal]
+
+  - id: cambio_real_efetivo
+    nome: Índice da taxa de câmbio real efetiva (deflator IPCA), jun/1994 = 100
+    subtema: cambio
+    unidade: índice
+    periodicidade: mensal
+    sgs: 11752
+    aliases: [cambio real, taxa de cambio real efetiva, tcre]
+    notas: Alta do índice = depreciação real do real.
+
+  - id: reservas_internacionais
+    nome: Reservas internacionais — total (conceito caixa), fim de mês
+    subtema: reservas
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 3546
+    aliases: [reservas, reservas cambiais, reservas conceito caixa]
+    notas: Conceito caixa (igual ao fechamento mensal da série diária de caixa). O conceito liquidez, que soma as linhas com recompra, está em reservas_internacionais_liquidez_diaria.
+    destaque: true
+
+  - id: reservas_internacionais_diaria
+    nome: Reservas internacionais — total (conceito caixa), diária
+    subtema: reservas
+    unidade: US$ milhões
+    periodicidade: diaria
+    sgs: 13621
+    aliases: [reservas diarias, reservas caixa diaria]
+    notas: Conceito caixa. O conceito liquidez está em reservas_internacionais_liquidez_diaria.
+
+  - id: transacoes_correntes
+    nome: Transações correntes — saldo mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22701
+    aliases: [conta corrente, deficit em conta corrente, tc]
+    notas: Valor negativo = déficit. O acumulado em 12 meses pronto está em transacoes_correntes_12m.
+    destaque: true
+
+  - id: transacoes_correntes_12m_pib
+    nome: Transações correntes — acumulado em 12 meses, % do PIB
+    subtema: balanco de pagamentos
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 23079
+    aliases: [conta corrente pib, deficit em conta corrente pib]
+    destaque: true
+    painel_geral: true
+
+  - id: balanca_comercial
+    nome: Balança comercial (balanço de pagamentos) — saldo mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22707
+    aliases: [saldo comercial, balanca]
+    notas: Conceito do balanço de pagamentos do BCB; difere um pouco do saldo divulgado pelo MDIC/Secex.
+    destaque: true
+
+  - id: idp
+    nome: Investimento direto no país (IDP) — ingressos líquidos mensais
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22885
+    aliases: [investimento direto, investimento estrangeiro direto, ied]
+    destaque: true
+
+  - id: idp_12m_pib
+    nome: Investimento direto no país — acumulado em 12 meses, % do PIB
+    subtema: balanco de pagamentos
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 23080
+    aliases: [investimento direto pib]
+
+  # --- câmbio: outras moedas e índices reais
+  - id: cambio_libra
+    nome: Taxa de câmbio — libra esterlina (PTAX venda), diária
+    subtema: cambio
+    unidade: R$/GBP
+    periodicidade: diaria
+    sgs: 21623
+    aliases: [libra, libra esterlina, gbp brl]
+    notas: Para média ou fim de mês, peça a série diária no período e agregue; o SGS só tem série mensal pronta para o dólar.
+
+  - id: cambio_iene
+    nome: Taxa de câmbio — iene (PTAX venda), diária
+    subtema: cambio
+    unidade: R$/JPY
+    periodicidade: diaria
+    sgs: 21621
+    aliases: [iene, yen, jpy brl]
+    notas: Reais por 1 iene.
+
+  - id: cambio_franco_suico
+    nome: Taxa de câmbio — franco suíço (PTAX venda), diária
+    subtema: cambio
+    unidade: R$/CHF
+    periodicidade: diaria
+    sgs: 21625
+    aliases: [franco suico, chf brl]
+
+  - id: cambio_dolar_canadense
+    nome: Taxa de câmbio — dólar canadense (PTAX venda), diária
+    subtema: cambio
+    unidade: R$/CAD
+    periodicidade: diaria
+    sgs: 21635
+    aliases: [dolar canadense, cad brl]
+
+  - id: cambio_dolar_australiano
+    nome: Taxa de câmbio — dólar australiano (PTAX venda), diária
+    subtema: cambio
+    unidade: R$/AUD
+    periodicidade: diaria
+    sgs: 21633
+    aliases: [dolar australiano, aud brl]
+
+  - id: cambio_real_efetivo_inpc
+    nome: Índice da taxa de câmbio real efetiva (deflator INPC), jun/1994 = 100
+    subtema: cambio
+    unidade: índice
+    periodicidade: mensal
+    sgs: 11767
+    aliases: [cambio real inpc, taxa de cambio real efetiva inpc, tcre inpc]
+    notas: Alta do índice = depreciação real do real. As versões com deflator IPA-DI (FGV) e IPC-Fipe usam índices de produtor privado e ficaram fora do catálogo.
+
+  - id: cambio_real_dolar
+    nome: Índice da taxa de câmbio real bilateral com o dólar americano (deflator IPCA), jun/1994 = 100
+    subtema: cambio
+    unidade: índice
+    periodicidade: mensal
+    sgs: 11753
+    aliases: [cambio real dolar, taxa de cambio real bilateral, dolar real]
+    notas: Alta do índice = depreciação real do real frente ao dólar.
+
+  # --- reservas e dívida externa
+  - id: reservas_internacionais_liquidez_diaria
+    nome: Reservas internacionais — conceito liquidez, total, diária
+    subtema: reservas
+    unidade: US$ milhões
+    periodicidade: diaria
+    sgs: 13982
+    aliases: [reservas conceito liquidez, reservas liquidez internacional, reservas liquidez]
+    notas: Conceito liquidez = conceito caixa mais os dólares emprestados pelo BCB com compromisso de recompra (linhas com recompra e empréstimos em moeda estrangeira). O SGS só publica o conceito liquidez em série diária.
+
+  - id: divida_externa_bruta
+    nome: Dívida externa bruta — saldo em fim de trimestre
+    subtema: divida externa
+    unidade: US$ milhões
+    periodicidade: trimestral
+    sgs: 3684
+    aliases: [divida externa, divida externa total]
+
+  - id: divida_externa_liquida
+    nome: Dívida externa líquida — saldo em fim de trimestre
+    subtema: divida externa
+    unidade: US$ milhões
+    periodicidade: trimestral
+    sgs: 3685
+    aliases: [divida externa liquida do pais]
+    notas: Dívida externa bruta menos os ativos externos do país (reservas internacionais, créditos no exterior e haveres de bancos); valor negativo = país credor líquido.
+
+  # --- balanço de pagamentos (BPM6): transações correntes
+  - id: transacoes_correntes_12m
+    nome: Transações correntes — saldo acumulado em 12 meses, US$ milhões
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 24419
+    aliases: [conta corrente 12 meses, deficit em conta corrente 12 meses, transacoes correntes acumulado]
+    notas: Valor negativo = déficit em transações correntes.
+    destaque: true
+
+  - id: exportacoes_bens_bp
+    nome: Exportações de bens (balanço de pagamentos) — mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22708
+    aliases: [exportacoes, exportacao de bens, exportacoes balanco de pagamentos]
+    notas: Conceito do balanço de pagamentos do BCB; difere um pouco das exportações divulgadas pelo MDIC/Secex.
+
+  - id: importacoes_bens_bp
+    nome: Importações de bens (balanço de pagamentos) — mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22709
+    aliases: [importacoes, importacao de bens, importacoes balanco de pagamentos]
+    notas: Conceito do balanço de pagamentos do BCB; difere um pouco das importações divulgadas pelo MDIC/Secex.
+
+  - id: servicos_bp
+    nome: Serviços (balanço de pagamentos) — saldo mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22719
+    aliases: [conta de servicos, balanca de servicos, deficit de servicos]
+    notas: Receitas menos despesas; valor negativo = déficit.
+
+  - id: viagens_internacionais_bp
+    nome: Viagens internacionais (balanço de pagamentos) — saldo mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22740
+    aliases: [viagens, turismo, gastos de turistas no exterior, conta de viagens]
+    notas: Receitas (gastos de estrangeiros no Brasil) menos despesas (gastos de brasileiros no exterior); valor negativo = déficit.
+
+  - id: renda_primaria_bp
+    nome: Renda primária (balanço de pagamentos) — saldo mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22800
+    aliases: [renda primaria, lucros e juros, remessas de lucros e dividendos, rendas]
+    notas: Lucros, dividendos, juros e salários; valor negativo = renda líquida enviada ao exterior. Inclui lucros reinvestidos.
+
+  - id: renda_secundaria_bp
+    nome: Renda secundária (balanço de pagamentos) — saldo mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22838
+    aliases: [renda secundaria, transferencias unilaterais, transferencias correntes]
+
+  # --- balanço de pagamentos (BPM6): conta capital e financeira
+  - id: conta_capital_bp
+    nome: Conta capital (balanço de pagamentos) — saldo mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22851
+    aliases: [conta capital]
+
+  - id: conta_financeira_bp
+    nome: Conta financeira (balanço de pagamentos) — fluxo líquido mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22863
+    aliases: [conta financeira, fluxo de capitais, conta de capitais]
+    notas: "Convenção BPM6: aquisição líquida de ativos menos incorrência líquida de passivos. Valor negativo = captação líquida de recursos externos (entrada de capitais); positivo = concessão líquida ao exterior. Inclui a variação dos ativos de reserva."
+
+  - id: idp_12m
+    nome: Investimento direto no país (IDP) — ingressos líquidos acumulados em 12 meses, US$ milhões
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 24422
+    aliases: [investimento direto 12 meses, idp acumulado, ied 12 meses]
+    destaque: true
+
+  - id: idp_participacao_capital
+    nome: Investimento direto no país — participação no capital (inclui lucros reinvestidos), líquido mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22888
+    aliases: [idp participacao no capital, investimento direto participacao no capital]
+    notas: Valor positivo = ingresso líquido no país.
+
+  - id: idp_reinvestimento_lucros
+    nome: Investimento direto no país — reinvestimento de lucros no Brasil, mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22892
+    aliases: [lucros reinvestidos, idp lucros reinvestidos]
+    notas: Parte da participação no capital (idp_participacao_capital).
+
+  - id: idp_intercompanhia
+    nome: Investimento direto no país — operações intercompanhia, líquido mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22893
+    aliases: [idp operacoes intercompanhia, emprestimos intercompanhia]
+    notas: Valor positivo = ingresso líquido no país (créditos entre empresas do mesmo grupo, desembolsos menos amortizações).
+
+  - id: investimento_direto_exterior
+    nome: Investimento direto no exterior (IDE) — líquido mensal
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22865
+    aliases: [ide, investimento brasileiro no exterior, investimento direto no exterior]
+    notas: Valor positivo = aumento líquido de ativos de residentes no exterior (saída de recursos).
+
+  - id: investimento_carteira_passivos
+    nome: Investimento em carteira no país (passivos) — ingressos líquidos mensais
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22924
+    aliases: [investimento em carteira, investimento estrangeiro em carteira, capital estrangeiro em carteira, portfolio]
+    notas: Ações, fundos de investimento e títulos de dívida detidos por não residentes. Valor positivo = ingresso líquido; negativo = saída líquida.
+    destaque: true
+
+  - id: investimento_carteira_acoes
+    nome: Investimento em carteira no país — ações (passivos), ingressos líquidos mensais
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22927
+    aliases: [investimento estrangeiro em acoes, fluxo estrangeiro acoes, estrangeiros na bolsa]
+    notas: Valor positivo = ingresso líquido; negativo = saída líquida. Não inclui fundos de investimento.
+
+  - id: investimento_carteira_titulos_pais
+    nome: Investimento em carteira — títulos de dívida negociados no mercado doméstico (passivos), ingressos líquidos mensais
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22942
+    aliases: [investimento estrangeiro em renda fixa, estrangeiros em titulos publicos, renda fixa no pais]
+    notas: Valor positivo = ingresso líquido; negativo = saída líquida.
+
+  - id: investimento_carteira_titulos_exterior
+    nome: Investimento em carteira — títulos de dívida negociados no mercado externo (passivos), ingressos líquidos mensais
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22945
+    aliases: [bonus no exterior, titulos de divida no mercado externo, captacoes externas em titulos]
+    notas: Valor positivo = ingresso líquido (emissões acima das amortizações).
+
+  - id: investimento_carteira_ativos
+    nome: Investimento em carteira no exterior (ativos) — aplicações líquidas mensais de residentes
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 22906
+    aliases: [investimento brasileiro em carteira no exterior, aplicacoes de brasileiros no exterior]
+    notas: Valor positivo = aumento líquido de aplicações de residentes no exterior (saída de recursos).
+
+  - id: ativos_reserva_bp
+    nome: Ativos de reserva (balanço de pagamentos) — variação mensal por transações
+    subtema: balanco de pagamentos
+    unidade: US$ milhões
+    periodicidade: mensal
+    sgs: 23043
+    aliases: [variacao das reservas, ativos de reserva]
+    notas: Fluxo do balanço de pagamentos; valor positivo = aumento das reservas.

@@ -1,0 +1,36 @@
+tema: politica_monetaria
+titulo: Política monetária, juros e agregados monetários
+indicadores:
+  - id: cdi_acumulado_mes_anualizado
+    nome: Taxa CDI acumulada no mês, anualizada
+    subtema: juros
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 4392
+    aliases: [cdi anualizado mensal, cdi do mes]
+
+  - id: tr_mensal
+    nome: Taxa Referencial (TR) — mensal
+    subtema: juros
+    unidade: "% a.m."
+    periodicidade: mensal
+    sgs: 7811
+    aliases: [tr mensal, taxa referencial mensal]
+    notas: A TR diária (código 226) não tem dados utilizáveis na API do SGS; use esta série mensal.
+
+  - id: tr_anualizada
+    nome: Taxa Referencial (TR) — anualizada
+    subtema: juros
+    unidade: "% a.a."
+    periodicidade: mensal
+    sgs: 7812
+    aliases: [tr anualizada, taxa referencial anual]
+
+  - id: multiplicador_monetario
+    nome: Multiplicador monetário — média do mês
+    subtema: agregados
+    unidade: índice
+    periodicidade: mensal
+    sgs: 7530
+    aliases: [multiplicador da moeda, multiplicador monetario]
+

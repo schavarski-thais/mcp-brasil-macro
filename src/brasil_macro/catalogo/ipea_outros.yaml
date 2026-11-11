@@ -1,0 +1,104 @@
+tema: atividade
+titulo: Atividade econômica — PIB, IBC-Br, indústria, comércio e serviços
+indicadores:
+  # --- petróleo e gás (ANP), distribuídos pelo Ipeadata
+  - id: producao_petroleo
+    nome: Produção de petróleo (óleo bruto e LGN) — média diária no mês
+    subtema: energia
+    unidade: mil barris/dia
+    periodicidade: mensal
+    ipea: ANP12_PDPET12
+    produtor: ANP
+    aliases: [petroleo, producao de petroleo, barris por dia, oleo e gas]
+    notas: "Desde jan/1979. Inclui óleo bruto e líquidos de gás natural (LGN)."
+
+  - id: producao_gas_natural
+    nome: Produção de gás natural — média diária no mês, em barris equivalentes de petróleo
+    subtema: energia
+    unidade: milhões de barris equivalentes/dia
+    periodicidade: mensal
+    ipea: ANP12_PDGASN12
+    produtor: ANP
+    aliases: [gas natural, producao de gas]
+    notas: "Desde jan/1979. Convertido pelo Ipeadata à razão aproximada de 6,293 barris equivalentes por mil m³ de gás."
+
+  - id: consumo_derivados_petroleo
+    nome: Consumo aparente de derivados de petróleo — média diária no mês
+    subtema: energia
+    unidade: mil barris/dia
+    periodicidade: mensal
+    ipea: ANP12_CDEPET12
+    produtor: ANP
+    aliases: [consumo de combustiveis, derivados de petroleo, vendas de combustiveis]
+
+  # --- geração de energia elétrica (ONS), distribuída pelo Ipeadata
+  - id: geracao_eletrica_hidraulica
+    nome: Geração de energia elétrica — hidráulica, média mensal
+    subtema: energia
+    unidade: MW médios
+    periodicidade: mensal
+    ipea: ONS12_HIDR12
+    produtor: ONS
+    aliases: [geracao hidreletrica, energia hidraulica, hidreletricas]
+    notas: "Geração no Sistema Interligado Nacional. O ONS é o operador do sistema instituído por lei e fiscalizado pela Aneel."
+
+  - id: geracao_eletrica_eolica
+    nome: Geração de energia elétrica — eólica, média mensal
+    subtema: energia
+    unidade: MW médios
+    periodicidade: mensal
+    ipea: ONS12_EOL12
+    produtor: ONS
+    aliases: [geracao eolica, energia eolica]
+
+  - id: geracao_eletrica_solar
+    nome: Geração de energia elétrica — solar, média mensal
+    subtema: energia
+    unidade: MW médios
+    periodicidade: mensal
+    ipea: ONS12_SOL12
+    produtor: ONS
+    aliases: [geracao solar, energia solar, fotovoltaica]
+    notas: "Usinas despachadas ou supervisionadas pelo ONS; não inclui a geração distribuída (painéis em telhados)."
+
+  - id: geracao_eletrica_termica
+    nome: Geração de energia elétrica — térmica convencional, média mensal
+    subtema: energia
+    unidade: MW médios
+    periodicidade: mensal
+    ipea: ONS12_CONV12
+    produtor: ONS
+    aliases: [geracao termica, termeletricas]
+
+  - id: geracao_eletrica_nuclear
+    nome: Geração de energia elétrica — termonuclear, média mensal
+    subtema: energia
+    unidade: MW médios
+    periodicidade: mensal
+    ipea: ONS12_NUCL12
+    produtor: ONS
+    aliases: [geracao nuclear, angra]
+
+  # O Ipeadata atribui o consumo de energia à Eletrobras, empresa privada desde 2022;
+  # por isso fica fora do conjunto padrão (só fontes oficiais).
+  - id: consumo_energia_eletrica
+    nome: Consumo de energia elétrica — total Brasil
+    subtema: energia
+    unidade: GWh
+    periodicidade: mensal
+    ipea: ELETRO12_CEET12
+    produtor: Eletrobras
+    oficial: false
+    aliases: [consumo de energia, energia eletrica, eletricidade]
+    notas: "Desde jan/1976. A fonte indicada pelo Ipeadata é a Eletrobras (estatal até a privatização, em 2022)."
+
+  - id: consumo_energia_eletrica_industria
+    nome: Consumo de energia elétrica — indústria
+    subtema: energia
+    unidade: GWh
+    periodicidade: mensal
+    ipea: ELETRO12_CEEIND12
+    produtor: Eletrobras
+    oficial: false
+    aliases: [consumo industrial de energia]
+    notas: "A fonte indicada pelo Ipeadata é a Eletrobras (estatal até a privatização, em 2022)."

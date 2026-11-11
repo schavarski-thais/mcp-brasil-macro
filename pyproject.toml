@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-brasil-macro"
+version = "0.1.0"
+description = "Servidor MCP com dados macroeconômicos oficiais do Brasil (Banco Central, IBGE, Tesouro Nacional, IPEA, MDIC)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=2,<3",
+    "httpx>=0.27",
+    "pyyaml>=6",
+    "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+mcp-brasil-macro = "brasil_macro.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"brasil_macro.catalogo" = ["*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["rede: consulta as APIs oficiais de verdade (rodar com: pytest -m rede)"]
+addopts = "-m 'not rede'"

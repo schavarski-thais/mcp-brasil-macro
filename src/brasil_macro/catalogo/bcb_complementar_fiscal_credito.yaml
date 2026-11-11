@@ -1,0 +1,12 @@
+tema: fiscal
+titulo: Política fiscal — resultado primário, nominal e dívida pública
+indicadores:
+  - id: divida_liquida_governo_federal_pib
+    nome: Dívida líquida do governo federal (% do PIB)
+    subtema: divida
+    unidade: "% do PIB"
+    periodicidade: mensal
+    sgs: 4505
+    aliases: [divida liquida federal pib, dlgf pib]
+    notas: Dívida líquida do governo federal (Tesouro, Banco Central e INSS) como proporção do PIB; é diferente da DLSP, que inclui estados e municípios.
+

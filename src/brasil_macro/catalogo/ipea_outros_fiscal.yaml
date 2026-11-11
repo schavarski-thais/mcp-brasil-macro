@@ -1,0 +1,65 @@
+tema: fiscal
+titulo: Política fiscal — resultado primário, nominal e dívida pública
+indicadores:
+  # --- arrecadação federal (Receita Federal), distribuída pelo Ipeadata
+  - id: arrecadacao_federal
+    nome: Arrecadação das receitas federais — total, receita bruta mensal
+    subtema: arrecadacao
+    unidade: R$ milhões
+    periodicidade: mensal
+    ipea: SRF12_TOTGER12
+    produtor: Receita Federal do Brasil
+    aliases: [arrecadacao, arrecadacao federal, receita federal, impostos e contribuicoes]
+    notas: "Valores nominais, desde jan/1993: receitas administradas pela Receita Federal mais as administradas por outros órgãos. Use transformacao=soma_12m para o acumulado em 12 meses; para variação real, deflacione pelo IPCA."
+    destaque: true
+
+  - id: arrecadacao_receita_administrada
+    nome: Arrecadação — receitas administradas pela Receita Federal, receita bruta mensal
+    subtema: arrecadacao
+    unidade: R$ milhões
+    periodicidade: mensal
+    ipea: SRF12_TOTREC12
+    produtor: Receita Federal do Brasil
+    aliases: [receita administrada, arrecadacao administrada]
+    notas: "Valores nominais. Inclui a receita previdenciária."
+
+  - id: arrecadacao_imposto_renda
+    nome: Arrecadação — Imposto sobre a Renda (total), receita bruta mensal
+    subtema: arrecadacao
+    unidade: R$ milhões
+    periodicidade: mensal
+    ipea: SRF12_IR12
+    produtor: Receita Federal do Brasil
+    aliases: [imposto de renda, ir, arrecadacao ir]
+    notas: "Valores nominais. Soma de IRPF, IRPJ e IR retido na fonte."
+
+  # --- Regime Geral de Previdência Social (Ministério da Previdência Social)
+  - id: rgps_arrecadacao_liquida
+    nome: Previdência Social (RGPS) — arrecadação líquida, fluxo de caixa mensal
+    subtema: previdencia
+    unidade: R$ mil
+    periodicidade: mensal
+    ipea: MPAS12_ARRLIQ12
+    produtor: Ministério da Previdência Social
+    aliases: [arrecadacao previdenciaria, receita do inss, rgps arrecadacao]
+    notas: "Valores nominais, em R$ mil (não milhões)."
+
+  - id: rgps_beneficios
+    nome: Previdência Social (RGPS) — benefícios previdenciários pagos, fluxo de caixa mensal
+    subtema: previdencia
+    unidade: R$ mil
+    periodicidade: mensal
+    ipea: MPAS12_BENPREV12
+    produtor: Ministério da Previdência Social
+    aliases: [beneficios previdenciarios, despesa do inss, aposentadorias e pensoes]
+    notas: "Valores nominais, em R$ mil (não milhões). Meses com antecipação do 13º mostram picos."
+
+  - id: rgps_resultado
+    nome: Previdência Social (RGPS) — resultado primário (arrecadação líquida menos benefícios), mensal
+    subtema: previdencia
+    unidade: R$ mil
+    periodicidade: mensal
+    ipea: MPAS12_RESPRGPS12
+    produtor: Ministério da Previdência Social
+    aliases: [deficit da previdencia, resultado do rgps, deficit do inss]
+    notas: "Valores nominais, em R$ mil (não milhões). Negativo = déficit. Use transformacao=soma_12m para o acumulado em 12 meses."
