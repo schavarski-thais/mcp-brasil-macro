@@ -17,7 +17,7 @@ genéricas (`sgs_serie`, `sidra_consulta`, `ipea_serie`).
 Requer Python 3.11 ou superior.
 
 ```bash
-git clone https://github.com/<seu-usuario>/mcp-brasil-macro.git
+git clone https://github.com/schavarski-thais/mcp-brasil-macro.git
 cd mcp-brasil-macro
 python -m venv .venv
 .venv/bin/python -m pip install -e .        # no Windows: .venv\Scripts\python.exe
