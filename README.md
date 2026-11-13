@@ -1,5 +1,7 @@
 # mcp-brasil-macro
 
+> **English:** MCP (Model Context Protocol) server with official Brazilian macroeconomic data: Selic and Copom, IPCA inflation, Focus survey, GDP, unemployment, exchange rate (PTAX), public debt, fiscal results, trade, fuel prices and investment funds. Sources: Banco Central (SGS), IBGE (SIDRA), Tesouro Nacional, IPEA, MDIC, ANP, CVM. 476 curated indicators. Works with Claude Code, Claude Desktop and any MCP client over stdio. Docs below are in Portuguese.
+
 Servidor MCP (stdio) com dados macroeconômicos do Brasil, **somente de fontes oficiais**:
 Banco Central (SGS, Focus, PTAX, Copom), IBGE (SIDRA), Tesouro Nacional (RTN, dívida, SICONFI),
 IPEA (Ipeadata, que redistribui séries de órgãos oficiais), MDIC/Secex (ComexStat), ANP
@@ -14,7 +16,13 @@ genéricas (`sgs_serie`, `sidra_consulta`, `ipea_serie`).
 
 ## Instalação
 
-Requer Python 3.11 ou superior.
+Requer Python 3.11 ou superior. Instalação direta do GitHub:
+
+```bash
+pip install git+https://github.com/schavarski-thais/mcp-brasil-macro.git
+```
+
+Isso instala o comando `mcp-brasil-macro`. Para desenvolvimento, clone o repositório:
 
 ```bash
 git clone https://github.com/schavarski-thais/mcp-brasil-macro.git
@@ -26,8 +34,8 @@ python -m venv .venv
 Registro no Claude Code:
 
 ```bash
-claude mcp add brasil-macro -- /caminho/para/mcp-brasil-macro/.venv/bin/python -m brasil_macro.server
-# no Windows: ...\mcp-brasil-macro\.venv\Scripts\python.exe -m brasil_macro.server
+claude mcp add brasil-macro -- mcp-brasil-macro
+# ou, se instalou em um venv: claude mcp add brasil-macro -- /caminho/.venv/bin/python -m brasil_macro.server
 ```
 
 Para outros clientes MCP, o comando é o mesmo (`python -m brasil_macro.server`, ou o script
