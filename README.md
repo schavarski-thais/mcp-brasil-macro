@@ -16,13 +16,13 @@ genéricas (`sgs_serie`, `sidra_consulta`, `ipea_serie`).
 
 ## Instalação
 
-Requer Python 3.11 ou superior. Instalação direta do GitHub:
+Requer Python 3.11 ou superior (testado com 3.13):
 
 ```bash
-pip install git+https://github.com/schavarski-thais/mcp-brasil-macro.git
+pip install mcp-brasil-macro
 ```
 
-Isso instala o comando `mcp-brasil-macro`. Para desenvolvimento, clone o repositório:
+Isso instala o comando `mcp-brasil-macro`. Para rodar sem instalar, use `uvx mcp-brasil-macro`. Para desenvolvimento, clone o repositório:
 
 ```bash
 git clone https://github.com/schavarski-thais/mcp-brasil-macro.git
