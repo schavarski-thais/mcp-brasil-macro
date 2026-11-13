@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mcp-brasil-macro"
-version = "0.1.0"
+version = "0.1.1"
 description = "Servidor MCP com dados macroeconômicos oficiais do Brasil (Banco Central, IBGE, Tesouro Nacional, IPEA, MDIC)"
 readme = "README.md"
 requires-python = ">=3.11"

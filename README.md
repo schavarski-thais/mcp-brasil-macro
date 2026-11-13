@@ -1,4 +1,11 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/schavarski-thais/mcp-brasil-macro/main/assets/logo.png" alt="MCP Brasil Macro - dados macroeconômicos do Brasil" width="720">
+</p>
+
 # mcp-brasil-macro
+
+<!-- mcp-name: io.github.schavarski-thais/mcp-brasil-macro -->
+mcp-name: io.github.schavarski-thais/mcp-brasil-macro
 
 > **English:** MCP (Model Context Protocol) server with official Brazilian macroeconomic data: Selic and Copom, IPCA inflation, Focus survey, GDP, unemployment, exchange rate (PTAX), public debt, fiscal results, trade, fuel prices and investment funds. Sources: Banco Central (SGS), IBGE (SIDRA), Tesouro Nacional, IPEA, MDIC, ANP, CVM. 476 curated indicators. Works with Claude Code, Claude Desktop and any MCP client over stdio. Docs below are in Portuguese.
 
